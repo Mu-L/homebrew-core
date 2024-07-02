@@ -3,19 +3,19 @@ class Icloudpd < Formula
 
   desc "Tool to download photos from iCloud"
   homepage "https://github.com/icloud-photos-downloader/icloud_photos_downloader"
-  url "https://github.com/icloud-photos-downloader/icloud_photos_downloader/archive/refs/tags/v1.20.0.tar.gz"
-  sha256 "ac2d194b1d2d06989516c11ade8866386b5c762c9acf633180aec99f0269b9e4"
+  url "https://github.com/icloud-photos-downloader/icloud_photos_downloader/archive/refs/tags/v1.20.4.tar.gz"
+  sha256 "55241ce3c3e02f5f75626c16ce54025339f1469112c533136988f9a0f63cdc17"
   license "MIT"
   head "https://github.com/icloud-photos-downloader/icloud_photos_downloader.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3a9311b3fc440b85033d84c18c07e29558a5e0402be51cc2df19702f4f1cb97c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3a9311b3fc440b85033d84c18c07e29558a5e0402be51cc2df19702f4f1cb97c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3a9311b3fc440b85033d84c18c07e29558a5e0402be51cc2df19702f4f1cb97c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e82a2aefd6bf1949daec9f68e3c9b17bd53dbef7ca6ac6513eaf181d5741f3fe"
-    sha256 cellar: :any_skip_relocation, ventura:        "e82a2aefd6bf1949daec9f68e3c9b17bd53dbef7ca6ac6513eaf181d5741f3fe"
-    sha256 cellar: :any_skip_relocation, monterey:       "e82a2aefd6bf1949daec9f68e3c9b17bd53dbef7ca6ac6513eaf181d5741f3fe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "77c0d5a19c7e1bfa522a092e2f0326e2cfd105726ecbecb591040604c87fb1fb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8bb52c9d3424a833c57886486b90de2ffad7ff5ddb5e28dbe6cda64ad2d6e504"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8bb52c9d3424a833c57886486b90de2ffad7ff5ddb5e28dbe6cda64ad2d6e504"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8bb52c9d3424a833c57886486b90de2ffad7ff5ddb5e28dbe6cda64ad2d6e504"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e71cdef5c9c8af3cac74640e49c7ace720e41ed86fafb195a229f06e0303c913"
+    sha256 cellar: :any_skip_relocation, ventura:        "e71cdef5c9c8af3cac74640e49c7ace720e41ed86fafb195a229f06e0303c913"
+    sha256 cellar: :any_skip_relocation, monterey:       "e71cdef5c9c8af3cac74640e49c7ace720e41ed86fafb195a229f06e0303c913"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d220e37f694991523d4b83979166259f348d4c74f48f6a6f59ccc65d1b87e75e"
   end
 
   depends_on "python@3.12"
@@ -71,8 +71,8 @@ class Icloudpd < Formula
   end
 
   resource "more-itertools" do
-    url "https://files.pythonhosted.org/packages/df/ad/7905a7fd46ffb61d976133a4f47799388209e73cbc8c1253593335da88b4/more-itertools-10.2.0.tar.gz"
-    sha256 "8fccb480c43d3e99a00087634c06dd02b0d50fbf088b380de5a41a015ec239e1"
+    url "https://files.pythonhosted.org/packages/01/33/77f586de725fc990d12dda3d4efca4a41635be0f99a987b9cc3a78364c13/more-itertools-10.3.0.tar.gz"
+    sha256 "e5d93ef411224fbcef366a6e8ddc4c5781bc6359d43412a65dd5964e46111463"
   end
 
   resource "piexif" do

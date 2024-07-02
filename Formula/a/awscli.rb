@@ -3,19 +3,19 @@ class Awscli < Formula
 
   desc "Official Amazon AWS command-line interface"
   homepage "https://aws.amazon.com/cli/"
-  url "https://github.com/aws/aws-cli/archive/refs/tags/2.16.9.tar.gz"
-  sha256 "222cf8e00c9473828a4ddd20a1544a2184676d37847ea7c9a3c7ae001013b8f2"
+  url "https://github.com/aws/aws-cli/archive/refs/tags/2.17.5.tar.gz"
+  sha256 "eaa711efc9f6dc6fde3f14f1f497e03da1470c5176bb90e55360ae5545c62838"
   license "Apache-2.0"
   head "https://github.com/aws/aws-cli.git", branch: "v2"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "2b9edaf83093f472de7bce6862a79707bd4b59370c174f38059127421c776e48"
-    sha256 cellar: :any,                 arm64_ventura:  "e62a85dc9c21ad88d1296b7b51d59124a682caf5ef65a768e8fb9a02cd8e7e8b"
-    sha256 cellar: :any,                 arm64_monterey: "9a1a73981e444b010aaa425921bd8b27e1edb0a96dd4cd29696877e0aa058ece"
-    sha256 cellar: :any,                 sonoma:         "c10565095bb5fe8321fce3c6baed58c79c004641a902b8d44134ede0599d1fc0"
-    sha256 cellar: :any,                 ventura:        "be1c627c0abea3276419cf8329dd277192ccb56aa00ad93ccc59ff8d3cd59899"
-    sha256 cellar: :any,                 monterey:       "73724aa4a1e08d163666fcde1ea98c31871625d5f11bce11dc79b14cc574ccab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b3178eca62340aadf21ed818cccd342a0bf0ebe19f170955d8ac12e0cb9030ad"
+    sha256 cellar: :any,                 arm64_sonoma:   "02e88ac5cd1c4ef227190295d7d74b449730959061c008dbbe491e9e5f2ba755"
+    sha256 cellar: :any,                 arm64_ventura:  "8e5b7f05d76ba9acc06af9ec1c7084f7af91ad3514616e0eca07fb4afafab842"
+    sha256 cellar: :any,                 arm64_monterey: "380b674d2ecc133661997bdfef853beabb9aaf8873831c7fcc8b4d51b9bc2c21"
+    sha256 cellar: :any,                 sonoma:         "76df2bc33fb9d7603496a39730f11ec2340dc8ac846561dc34069f81d8ddd449"
+    sha256 cellar: :any,                 ventura:        "20dad0ccdc1535158889883fcf959c6a95bbd1039991bd23ca774a12eb046859"
+    sha256 cellar: :any,                 monterey:       "0841a1ec13b3fad6115f123ddfc3576319af08a9b644bef66ad91a59aa327cea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a707889d063981050d5ef226114888e27e7b57332dff1b9d36d56ab0cf3aff11"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -29,8 +29,8 @@ class Awscli < Formula
   uses_from_macos "mandoc"
 
   resource "awscrt" do
-    url "https://files.pythonhosted.org/packages/69/25/b1c6d1c3aeed90cb6ce69a6c5136caeb7f43f8d81a87f626d6a21b082afc/awscrt-0.19.19.tar.gz"
-    sha256 "1c1511535dee146a6c26a382ed3ead56259a105b3b7d7d823553ae567d038dfe"
+    url "https://files.pythonhosted.org/packages/c9/95/9faca9e404fd3cd72fa8f75d4f33f16032f3598a841e83dc81c687b4b80a/awscrt-0.20.11.tar.gz"
+    sha256 "c3dbfb7f1909457952e645373e72b69f90c50c465ee6a46d9bbdc12acb79803c"
   end
 
   resource "cffi" do
@@ -99,8 +99,8 @@ class Awscli < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/0c/39/64487bf07df2ed854cc06078c27c0d0abc59bd27b32232876e403c333a08/urllib3-1.26.18.tar.gz"
-    sha256 "f8ecc1bba5667413457c529ab955bf8c67b45db799d159066261719e328580a0"
+    url "https://files.pythonhosted.org/packages/c8/93/65e479b023bbc46dab3e092bda6b0005424ea3217d711964ccdede3f9b1b/urllib3-1.26.19.tar.gz"
+    sha256 "3e3d753a8618b86d7de333b4223005f68720bcd6a7d2bcb9fbd2229ec7c1e429"
   end
 
   resource "wcwidth" do

@@ -226,6 +226,9 @@
     "exclude_packages": ["certifi"]
   },
   "diffoscope": "diffoscope[cmdline]",
+  "dnsgen": {
+    "exclude_packages": ["certifi"]
+  },
   "dnsrobocert": {
     "exclude_packages": ["certifi", "cryptography"]
   },
@@ -250,14 +253,8 @@
     "exclude_packages": ["certifi", "cryptography"]
   },
   "duplicity": {
-    "extra_packages": [
-      "atom", "azure-storage-blob", "b2sdk", "boto3", "botocore", "boxsdk[jwt]",
-      "dropbox", "fasteners", "gdata-python3", "google-api-python-client",
-      "google-auth-oauthlib", "httplib2", "jottalib", "keyring", "megatools",
-      "paramiko", "pexpect", "pydrive2",
-      "python-swiftclient[keystone]", "requests[security]", "requests-oauthlib"
-    ],
-    "exclude_packages": ["certifi", "cryptography"]
+    "exclude_packages": ["certifi", "cryptography"],
+    "extra_packages": ["python-novaclient>18", "stone==3.2.1"]
   },
   "dvc": {
     "package_name": "dvc[all]",
@@ -265,6 +262,9 @@
   },
   "dxpy": {
     "exclude_packages": ["cryptography", "certifi"]
+  },
+  "ecs-deploy": {
+    "exclude_packages": ["certifi"]
   },
   "enex2notion": {
     "exclude_packages": ["certifi", "pymupdf"]
@@ -746,13 +746,15 @@
     "extra_packages": ["numpydoc"]
   },
   "ssh-mitm": {
-    "exclude_packages": ["cryptography"],
-    "extra_packages": ["setuptools"]
+    "exclude_packages": ["cryptography"]
   },
   "sslyze": {
     "exclude_packages": ["typing-extensions", "pycparser"]
   },
   "streamlink": {
+    "exclude_packages": ["certifi"]
+  },
+  "subliminal": {
     "exclude_packages": ["certifi"]
   },
   "svtplay-dl": {
@@ -794,7 +796,7 @@
     "exclude_packages": ["certifi"]
   },
   "twine": {
-    "exclude_packages": ["certifi"]
+    "exclude_packages": ["certifi", "cryptography"]
   },
   "unoconv":{
     "extra_packages": ["setuptools"]

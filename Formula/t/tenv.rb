@@ -1,19 +1,19 @@
 class Tenv < Formula
   desc "OpenTofu / Terraform / Terragrunt / Atmos version manager"
   homepage "https://tofuutils.github.io/tenv/"
-  url "https://github.com/tofuutils/tenv/archive/refs/tags/v2.1.6.tar.gz"
-  sha256 "59e30daba722a8a992b970520018f621f364f39222582890c2bcbae4e36c45ad"
+  url "https://github.com/tofuutils/tenv/archive/refs/tags/v2.2.1.tar.gz"
+  sha256 "6dd576f86244f982f005e08c00c025db6b44c7da889be0cb7a6fbd18a841d900"
   license "Apache-2.0"
   head "https://github.com/tofuutils/tenv.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "772071691631d21f38a77010da2ea010d58e435a6424423f1e63701c5e0295a3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "772071691631d21f38a77010da2ea010d58e435a6424423f1e63701c5e0295a3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "772071691631d21f38a77010da2ea010d58e435a6424423f1e63701c5e0295a3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d893b2b008cb18a55e514f424bf0a998930df27349309d5e4f7bb8c4e3234eaf"
-    sha256 cellar: :any_skip_relocation, ventura:        "d893b2b008cb18a55e514f424bf0a998930df27349309d5e4f7bb8c4e3234eaf"
-    sha256 cellar: :any_skip_relocation, monterey:       "d893b2b008cb18a55e514f424bf0a998930df27349309d5e4f7bb8c4e3234eaf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f2050104c5f92b78b430ba8590a2c9a4687310af91e66fb66620e11f5c2f03e7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "75da63fc99d352b84fb4ace2cab619432f8d994c55bf441d3f65a96002191da5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "75da63fc99d352b84fb4ace2cab619432f8d994c55bf441d3f65a96002191da5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "75da63fc99d352b84fb4ace2cab619432f8d994c55bf441d3f65a96002191da5"
+    sha256 cellar: :any_skip_relocation, sonoma:         "40086e2b75688628bacdfa9bccd7ae1b6659e90b70b33b4f0043e26fca9b68ca"
+    sha256 cellar: :any_skip_relocation, ventura:        "40086e2b75688628bacdfa9bccd7ae1b6659e90b70b33b4f0043e26fca9b68ca"
+    sha256 cellar: :any_skip_relocation, monterey:       "40086e2b75688628bacdfa9bccd7ae1b6659e90b70b33b4f0043e26fca9b68ca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "05f0966d628ca64705849eb053e9c8fdf6908a4bea62370124a508a8ecbd19ab"
   end
 
   depends_on "go" => :build
