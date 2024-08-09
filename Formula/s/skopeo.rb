@@ -1,18 +1,18 @@
 class Skopeo < Formula
   desc "Work with remote images registries"
   homepage "https://github.com/containers/skopeo"
-  url "https://github.com/containers/skopeo/archive/refs/tags/v1.15.1.tar.gz"
-  sha256 "4db9798afd45e3282f35ddad3e494db99231e84470f30d6b105a3ed687e67ee0"
+  url "https://github.com/containers/skopeo/archive/refs/tags/v1.16.0.tar.gz"
+  sha256 "fed91fd067605460ef33431163227471b1e85c8768203fc393345d6ffd645448"
   license "Apache-2.0"
 
   bottle do
-    sha256 arm64_sonoma:   "7331d8f94bceb8ba15e7614cbb711ea0153f0e2e951bafb203e05c1c417920ca"
-    sha256 arm64_ventura:  "9a0f072f0f3a08cc3e286717ef4651ac3be0c63f2d5f1101d411c8a12d3ac55c"
-    sha256 arm64_monterey: "c4257a9968bd222a7aa9962714e4d2d2fe7105cf32b7d3489e35a4c962ddd672"
-    sha256 sonoma:         "09bf7986a3670f92c24a803bbb954f5af00b9305839d864e707a9f0bba96ab7c"
-    sha256 ventura:        "650bcc0ea0dbc87e77d67d5dd221f0dd01da29d91b100d87d903558ea88d47ac"
-    sha256 monterey:       "0616a1489531e817b2e0890dbc388e1f71fe947280cc62fa1ce00e696c7ebbdf"
-    sha256 x86_64_linux:   "a6a4f54c762a2f9478e97a2b71895f935e71e619cecdfaba92ad16dfbe01999f"
+    sha256 arm64_sonoma:   "46bd7255d1252ef39be0fe9581cf50f479850be928c0bd8b442c140aa942511e"
+    sha256 arm64_ventura:  "40ad70539098db8d4d4c59e640a0866f8faf5a1e21599d6bf38f25be2281584f"
+    sha256 arm64_monterey: "62aa104f5d20d7a381dcfc896800bbac89c65833001c0bdfb9e78af7baebdb94"
+    sha256 sonoma:         "c3893e8b17bc36854dec5637bc9763d93f414aa5f3f4410a1ce5cea7f44208d0"
+    sha256 ventura:        "4047978d3dde13fa410cca2f85507ba02934a1a7a52903394ed12f8e865e5bcb"
+    sha256 monterey:       "a1e39d8a6c36d0856560fcfa11fe9683af1d99d543fde87610619d2e46cdab65"
+    sha256 x86_64_linux:   "c2f39f8df6478347b4aa23a1b88c7367d82d7f7530be7bf36335db0450361005"
   end
 
   depends_on "go" => :build
@@ -33,7 +33,7 @@ class Skopeo < Formula
       "containers_image_ostree_stub",
       Utils.safe_popen_read("hack/btrfs_tag.sh").chomp,
       Utils.safe_popen_read("hack/btrfs_installed_tag.sh").chomp,
-      Utils.safe_popen_read("hack/libdm_tag.sh").chomp,
+      Utils.safe_popen_read("hack/libsubid_tag.sh").chomp,
     ].uniq.join(" ")
 
     ldflag_prefix = "github.com/containers/image/v5"

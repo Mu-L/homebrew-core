@@ -21,6 +21,7 @@ class Testdisk < Formula
   end
 
   uses_from_macos "ncurses"
+  uses_from_macos "zlib"
 
   on_linux do
     depends_on "util-linux"
@@ -35,6 +36,6 @@ class Testdisk < Formula
     path = "test.dmg"
     cp test_fixtures(path + ".gz"), path + ".gz"
     system "gunzip", path
-    system "#{bin}/testdisk", "/list", path
+    system bin/"testdisk", "/list", path
   end
 end

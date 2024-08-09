@@ -40,28 +40,28 @@ class FsUae < Formula
   depends_on "sdl2"
 
   uses_from_macos "zip"
+  uses_from_macos "zlib"
 
   on_linux do
+    depends_on "libx11"
     depends_on "openal-soft"
   end
 
   def install
     system "./bootstrap" if build.head?
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+    system "./configure", "--disable-silent-rules", *std_configure_args
     mkdir "gen"
     system "make"
     system "make", "install"
 
     # Remove unnecessary files
-    (share/"applications").rmtree
-    (share/"icons").rmtree
-    (share/"mime").rmtree
+    rm_r(share/"applications")
+    rm_r(share/"icons")
+    rm_r(share/"mime")
   end
 
   test do
+    # fs-uae is a GUI application
     assert_equal version.to_s, shell_output("#{bin}/fs-uae --version").chomp
   end
 end

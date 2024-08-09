@@ -1,44 +1,48 @@
-require "language/node"
-
 class Cortexso < Formula
   desc "Drop-in, local AI alternative to the OpenAI stack"
   homepage "https://jan.ai/cortex"
-  url "https://registry.npmjs.org/cortexso/-/cortexso-0.1.0.tgz"
-  sha256 "ad32120974c37b1e6bb8e745edf83ccf611045b38a21bafb8cd55fe2c638aeb9"
+  url "https://registry.npmjs.org/cortexso/-/cortexso-0.1.1.tgz"
+  sha256 "48efc16761eebfdd60e50211049554e7b781b30e56461042c6bf100e84d8d244"
   license "Apache-2.0"
   head "https://github.com/janhq/cortex.git", branch: "dev"
 
   bottle do
-    sha256                               arm64_sonoma:   "603541444d5e2c2c49057a3f847d5b5138f83ec14e9048743636ab598f0f0835"
-    sha256                               arm64_ventura:  "016e6b942350f1712ae95152bd74178b51297b45b6ab5737f5fde0f4d6bfee75"
-    sha256                               arm64_monterey: "36ae8f2a9b21aacaf97c24ddb11eba0be72fcfd1d136b04d06aa9601076c7103"
-    sha256                               sonoma:         "236a3bfc8d6d5f9d04336b3ae30c2a9d0f17edc1b5e3f90c209c746972c5fda6"
-    sha256                               ventura:        "57c9518227cbc44e3723f66f54d7794863310905635eb182ff02c0954b3cb8cb"
-    sha256                               monterey:       "6e40acad0fed2c2e9122dfab590a62f7d689176fcd804af4181469027e3341f1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "771ea24e5640bf6eba8fd81a4499acc2b2fea6db7912abbff406dd28c2943b25"
+    rebuild 1
+    sha256                               arm64_sonoma:   "5a40692000193b98c8274e0f4b6cd366558fc464e91fbc9222af2e16b4238b2b"
+    sha256                               arm64_ventura:  "e505143e5417668b3027c83e923871bacbbaf5ac0a86bde0e0b156bfad7e0c36"
+    sha256                               arm64_monterey: "0d30abe3e770dc4596348ba52c39bdeadbc270d61213a563c8f655c694858362"
+    sha256                               sonoma:         "33d3271364280efa43bdf39ff61532e4e6f1ec5e1d0a2c3e9c70695cd6f5977f"
+    sha256                               ventura:        "9dc575f5fcdb463e7fd8e00159329fe29080b76e3c563de647c90b2affaf9141"
+    sha256                               monterey:       "30aa7c29ce75ef1429af1393073d4970a6b101bad2ddc638164e9b22cbb6b54e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f02d924016dcab7dce2faecaac5a77ba04ad4ba20dcac3e0fcc753d248364264"
   end
 
-  depends_on "python-setuptools" => :build
-  depends_on "python@3.12" => :build
   depends_on "node"
 
+  on_linux do
+    # Workaround for old `node-gyp` that needs distutils.
+    # TODO: Remove when `node-gyp` is v10+
+    depends_on "python-setuptools" => :build
+  end
+
+  conflicts_with "cortex", because: "both install `cortex` binaries"
+
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    # @cpu-instructions bundles all binaries for other platforms & architectures
-    # This deletes the non-matching architecture otherwise brew audit will complain.
+    system "npm", "install", *std_npm_args
+    bin.install_symlink Dir["#{libexec}/bin/*"]
+
     # Remove incompatible pre-built binaries
     os = OS.kernel_name.downcase
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
     node_modules = libexec/"lib/node_modules/cortexso/node_modules/cpu-instructions/prebuilds"
     node_modules.each_child do |dir|
-      dir.rmtree if dir.basename.to_s != "#{os}-#{arch}"
+      rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}"
     end
-    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   test do
     port = free_port
-    pid = fork { exec "#{bin}/cortex", "serve", "--port", port.to_s }
+    pid = fork { exec bin/"cortex", "serve", "--port", port.to_s }
     sleep 10
     begin
       assert_match "OK", shell_output("curl -s localhost:#{port}/v1/health")

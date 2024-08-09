@@ -1,22 +1,21 @@
-require "language/node"
 require "json"
 
 class Webpack < Formula
   desc "Bundler for JavaScript and friends"
   homepage "https://webpack.js.org/"
-  url "https://registry.npmjs.org/webpack/-/webpack-5.92.1.tgz"
-  sha256 "76073c7d5a84473f35e74ebce74d50fc4cfc6fe77a435754ca0c7621594411a3"
+  url "https://registry.npmjs.org/webpack/-/webpack-5.93.0.tgz"
+  sha256 "3aa06fab2965c33d9b563affe86146bda627b0e872a57ebe94450f17260a9616"
   license "MIT"
   head "https://github.com/webpack/webpack.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b1b4d919e926f624c348c2b3316311fc44fec1f89b0700f1a54242e650b72b67"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b1b4d919e926f624c348c2b3316311fc44fec1f89b0700f1a54242e650b72b67"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b1b4d919e926f624c348c2b3316311fc44fec1f89b0700f1a54242e650b72b67"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3529e5e8e2778bcc63c902866fa6e4a86fabca02c76b7719bbafd193bb159d2c"
-    sha256 cellar: :any_skip_relocation, ventura:        "3529e5e8e2778bcc63c902866fa6e4a86fabca02c76b7719bbafd193bb159d2c"
-    sha256 cellar: :any_skip_relocation, monterey:       "3529e5e8e2778bcc63c902866fa6e4a86fabca02c76b7719bbafd193bb159d2c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "492cfa46076aed87fca3d129ddd2afac68b654c8937eeecbc2d9dfeede27a76c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "71c5fb8088c0232d4907e7d91908fbf87370709c4ba310695bb676abbb2baed9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "71c5fb8088c0232d4907e7d91908fbf87370709c4ba310695bb676abbb2baed9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "71c5fb8088c0232d4907e7d91908fbf87370709c4ba310695bb676abbb2baed9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f2df30c4bf157b8f4a74c66ef315a8ecc3284314a2f64b2ec80e39bd28475923"
+    sha256 cellar: :any_skip_relocation, ventura:        "f2df30c4bf157b8f4a74c66ef315a8ecc3284314a2f64b2ec80e39bd28475923"
+    sha256 cellar: :any_skip_relocation, monterey:       "f2df30c4bf157b8f4a74c66ef315a8ecc3284314a2f64b2ec80e39bd28475923"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "20cbcbf900e5beb86391f7fc151f9084e41ddc600581e00d29c3cda5830a1a1f"
   end
 
   depends_on "node"
@@ -31,7 +30,7 @@ class Webpack < Formula
     buildpath.install resource("webpack-cli")
 
     cd buildpath/"node_modules/webpack" do
-      system "npm", "install", *Language::Node.local_npm_install_args, "--legacy-peer-deps"
+      system "npm", "install", *std_npm_args(prefix: false), "--legacy-peer-deps"
     end
 
     # declare webpack as a bundledDependency of webpack-cli
@@ -40,7 +39,7 @@ class Webpack < Formula
     pkg_json["bundleDependencies"] = ["webpack"]
     File.write("package.json", JSON.pretty_generate(pkg_json))
 
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
 
     bin.install_symlink libexec/"bin/webpack-cli"
     bin.install_symlink libexec/"bin/webpack-cli" => "webpack"

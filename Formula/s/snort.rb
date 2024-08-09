@@ -1,11 +1,10 @@
 class Snort < Formula
   desc "Flexible Network Intrusion Detection System"
   homepage "https://www.snort.org"
-  url "https://github.com/snort3/snort3/archive/refs/tags/3.1.84.0.tar.gz"
-  mirror "https://fossies.org/linux/misc/snort3-3.1.84.0.tar.gz"
-  sha256 "dca1707a66f6ca56ddd526163b2d951cefdb168bddc162c791adc74c0d226c7f"
+  url "https://github.com/snort3/snort3/archive/refs/tags/3.3.2.0.tar.gz"
+  mirror "https://fossies.org/linux/misc/snort3-3.3.2.0.tar.gz"
+  sha256 "4d37814404650582260d1a9e77eb5bfa907f8747b60c6898e0f38521b14df87d"
   license "GPL-2.0-only"
-  revision 1
   head "https://github.com/snort3/snort3.git", branch: "master"
 
   # There can be a notable gap between when a version is tagged and a
@@ -17,21 +16,21 @@ class Snort < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "77cca080ec795d1a584951978aa36c9cb3f778bf50335e4146a06b7abadef57b"
-    sha256 cellar: :any,                 arm64_ventura:  "7e7e02e6b999dc444865823bee078008f2e9b416a64aeed9807b740c93980faf"
-    sha256 cellar: :any,                 arm64_monterey: "36512c9d1e913a523a0bef8d4b8a3643b9c5e403ce065e0b9a31e2421214bef0"
-    sha256 cellar: :any,                 sonoma:         "308fa873d82d9cd2c65fa14c824bc559908485bdaf79efef8066c24820bbf356"
-    sha256 cellar: :any,                 ventura:        "dac8b332dd17859d0d2a79806f79ff3744111ae676b82f826ab1f04999f3e07c"
-    sha256 cellar: :any,                 monterey:       "121aa945319785beea9ca3f90558045d7a3740ec44f4d1438cb975c25f3815c1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "82efb89725e72a1e2722ec5e82f9860e8184d496a40b881f570a43922fe7818a"
+    sha256 cellar: :any,                 arm64_sonoma:   "d83f4fe53a7faf42c846c50bc5d6373fa886bb055a56f6db53aa2da754eea4e6"
+    sha256 cellar: :any,                 arm64_ventura:  "6d7f730df47562af6426d7ddcf1ce86cde3d976065defd134322dab54d7fbc20"
+    sha256 cellar: :any,                 arm64_monterey: "b17d7573a34d5dad0e60fb18bc7025b5f7017e47a7d55f42f4506f692bb0a21b"
+    sha256 cellar: :any,                 sonoma:         "742825ff02790c1272193ac0a5d41a67da4cd2a7a3c0b93ad95ff4450f2691f6"
+    sha256 cellar: :any,                 ventura:        "82a5029d9ab6d3066b66f348d9f1a7dd9fea3327cac8137d9f3a2d0bbe14c759"
+    sha256 cellar: :any,                 monterey:       "e276c92f0266658df97bb1fd589ce72522e335b839adad98b62c11b913edb594"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a82a6e951286f579dcb26c256ca01e2845ef5bb60ec3081251d978ccb47620cc"
   end
 
   depends_on "cmake" => :build
   depends_on "flex" => :build # need flex>=2.6.0
   depends_on "pkg-config" => :build
   depends_on "daq"
-  depends_on "gperftools" # for tcmalloc
   depends_on "hwloc"
+  depends_on "jemalloc"
   depends_on "libdnet"
   depends_on "libpcap" # macOS version segfaults
   depends_on "luajit"
@@ -49,15 +48,14 @@ class Snort < Formula
   fails_with gcc: "5"
 
   def install
-    # Work around `std::ptr_fun` usage.
-    # Issue ref: https://github.com/snort3/snort3/issues/347
-    ENV.append "CXXFLAGS", "-D_LIBCPP_ENABLE_CXX17_REMOVED_BINDERS" if ENV.compiler == :clang
-
     # These flags are not needed for LuaJIT 2.1 (Ref: https://luajit.org/install.html).
     # On Apple ARM, building with flags results in broken binaries and they need to be removed.
     inreplace "cmake/FindLuaJIT.cmake", " -pagezero_size 10000 -image_base 100000000\"", "\""
 
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-DENABLE_TCMALLOC=ON"
+    # https://github.com/snort3/snort3/pull/370
+    inreplace "src/actions/actions_module.h", "#include <vector>", "#include <vector>\n#include <array>"
+
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-DENABLE_JEMALLOC=ON"
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

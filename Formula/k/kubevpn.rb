@@ -1,18 +1,18 @@
 class Kubevpn < Formula
   desc "Offers a Cloud-Native Dev Environment that connects to your K8s cluster network"
   homepage "https://www.kubevpn.cn"
-  url "https://github.com/kubenetworks/kubevpn/archive/refs/tags/v2.2.13.tar.gz"
-  sha256 "2f21b7188333a2cdaaa23246b3b2d08e6e4a236b6d28c2dc85c306f690e57e0a"
+  url "https://github.com/kubenetworks/kubevpn/archive/refs/tags/v2.2.17.tar.gz"
+  sha256 "508b0a16547884ac8265537cb752c59339458066bbea6e1601485adef396c7f2"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0842067e972a76bbc9bf15162e6c427bb98eb1f4337d1e33f38a7936126b0d25"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8a6593d839e7f10489170c44b4ca4032d13663c5b505f4b68b5c5e211de73c42"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a9c47b9e89c24a97c11ce49c7546286f82e0c27e8d8405cd462c25b91b4eef5e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "eaa94b31c97bc457f98c76bd4ad9468eba960f356610ae19477b86c05f60da00"
-    sha256 cellar: :any_skip_relocation, ventura:        "6df470fbe03744ce24f6721df4e62d3bddc40689a84821c42170d6d04c767084"
-    sha256 cellar: :any_skip_relocation, monterey:       "789d474522c05bbb1b551b7563a18ee2dafcc31e590360bb4a8f5b033a04f8e6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2112f97ed93ae78257f8e3553528315b53b753a8148e8a921bebbe6cee7d04f9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9649206e0c20a000f03d944f35cd840d24e21c3263bbc54f07fbf0cd685dd9f8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1dcedf62b98d92c5014a0421875257c13ea77500dd5e8a9712e587787dc40f29"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "25740d3d70ec48c317fff30773678dae77f05b12578e6cc71855a91d8de1e681"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f22a0bfe2a9df75f9ccb63247fe01259e4bddfd9473a69a7010b1fb7e41940fa"
+    sha256 cellar: :any_skip_relocation, ventura:        "53e39aeb204c2610937d21f4f948707391399778d90f6e0103d822c8072e2f90"
+    sha256 cellar: :any_skip_relocation, monterey:       "1288f98386495dca71b702e7a3faab6b7a43c195093f6e4779dff63d0a777b0c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "73cf09796614b0fd584effd8428b7dfd3ac3c916e53b79b7d504304aa21c155e"
   end
 
   depends_on "go" => :build

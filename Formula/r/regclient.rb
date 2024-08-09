@@ -1,19 +1,19 @@
 class Regclient < Formula
   desc "Docker and OCI Registry Client in Go and tooling using those libraries"
   homepage "https://github.com/regclient/regclient"
-  url "https://github.com/regclient/regclient/archive/refs/tags/v0.6.1.tar.gz"
-  sha256 "f2a87fb940f212d94547f4241d11f3392a0b3c13d5b7bc4584780d8aa80716ae"
+  url "https://github.com/regclient/regclient/archive/refs/tags/v0.7.1.tar.gz"
+  sha256 "17042a6f8b5d5bf25ce916347a0b314f7dd91a6c06f78761a4e5fe21f5eb9632"
   license "Apache-2.0"
   head "https://github.com/regclient/regclient.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ca31595b7044786a80e300c3345be15d056f51affbef5fd8605bfb55205bcbb1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "094f3bb0f9ff19f4bd3d43bc18b0c445fe5ace6b74018b251ec6dee85e8d7bca"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "209c1be8ae41804ea290b31f1e8e99fcaa6fe020b597fd848a844cfc4dfe4572"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8e89d7d3a91078e6d45055301fea720867b3059dfe2f4ef2ca49cbb4feebfa01"
-    sha256 cellar: :any_skip_relocation, ventura:        "53e579e38295361e42be266bb6a32f001848822169c27c2a289450be9ff9be99"
-    sha256 cellar: :any_skip_relocation, monterey:       "609e8fe23a90dbd434cbfe5fa8261ac8987cdd6d475827feb1dde4fe779963aa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1aa9c57ccfaaeada1b3eba910f710274feb36c138cc4a97ea84602ee53861c7d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ccc8589896360f67f531d8dabc0a5866c6212d541429d08355cbca3a08f36efe"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "606e9cf5ab33c8581eb121bf2a11ab188e34c9f900cd326ccbcf27a6836224e3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9aec13a3b0031fa746d9e4c83573a77616424dfd1abecf35ea100767891fd7c9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f92f19447dc4d2cc4d6144b7e6ee1191ae92aea794d15dc0f6240ab1feecfad8"
+    sha256 cellar: :any_skip_relocation, ventura:        "252ca40cc735e7400ba2bda2013c7d44a04a320d1a2889cc867ac862b6dd2e36"
+    sha256 cellar: :any_skip_relocation, monterey:       "cf4be119832a9e790217e99955077785d511b347fe419905873673429a23abf7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f442b906bb0c4c7ab062cc53fda6609853c23f78e649cc300811edcc72dddc49"
   end
 
   depends_on "go" => :build

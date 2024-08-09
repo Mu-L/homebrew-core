@@ -1,19 +1,19 @@
 class Fb303 < Formula
   desc "Thrift functions for querying information from a service"
   homepage "https://github.com/facebook/fb303"
-  url "https://github.com/facebook/fb303/archive/refs/tags/v2024.07.01.00.tar.gz"
-  sha256 "91dc419bed9fa2cc9093172cd28414f432117a4ef59197328979432894284225"
+  url "https://github.com/facebook/fb303/archive/refs/tags/v2024.08.05.00.tar.gz"
+  sha256 "7f290952209612f3ac9bce3e775c3d1ea35ce15ceebc63dbd2ecc65393bea632"
   license "Apache-2.0"
   head "https://github.com/facebook/fb303.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "2b2ff31605f878a0044744947b42f80ed4928795e16d6d0152e9b6887f4106d8"
-    sha256 cellar: :any,                 arm64_ventura:  "2a0bad1236ae7c512535f72a54bd95cac748bcada2f252df3cb81d4a63d6bdfd"
-    sha256 cellar: :any,                 arm64_monterey: "503a0ca9a145a68e17869425780a3cca40908f6c4ae3b54bc5a773a32a38826f"
-    sha256 cellar: :any,                 sonoma:         "18784db69b153f6f6f9173ec0715fdc6e5f79a17eabb11c8ec2a7bafc3e1167d"
-    sha256 cellar: :any,                 ventura:        "85336a929065947c14c5cef30641adb67265264c54d7be7b58b9e084d7fc909f"
-    sha256 cellar: :any,                 monterey:       "515a9be7eb953cb30a604907c41d63ec5fa4a5fe497992fb35385d23119128d5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a4060c368850d6cdbf4e4c342f477a39f3557dc9f9c146a0691ce63285f56a2b"
+    sha256 cellar: :any,                 arm64_sonoma:   "8cd40d8939ade6e0eee915014cce96eb46b48b4f966f6887a2cbc936bdcd4f58"
+    sha256 cellar: :any,                 arm64_ventura:  "1efcbe8d2ad599f8336a708b5ef66d658c86ba8c4250076babaa960cd600e37d"
+    sha256 cellar: :any,                 arm64_monterey: "1dea321312893c91d3b87c2a16fa1fb81d2daad80108fe7f1a6d161b8f9f6b87"
+    sha256 cellar: :any,                 sonoma:         "bd56e91327935a02623f7da390f591a0801fa0db6254ae62c8454acae5450f4a"
+    sha256 cellar: :any,                 ventura:        "adf6c95459a32f88af3a62f45abbc2916e1ee4056820a54e8be8186ec074ae16"
+    sha256 cellar: :any,                 monterey:       "f55e68e74e990a27559fc08dbd45e9fb34fb61214a6f04c7c5e9cd6607d04ae0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a8a83e011385f5554e0894a6237e7b8acd7350dc1c00cf8b37f48fcb301b3302"
   end
 
   depends_on "cmake" => :build

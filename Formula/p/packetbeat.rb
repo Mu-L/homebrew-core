@@ -2,19 +2,19 @@ class Packetbeat < Formula
   desc "Lightweight Shipper for Network Data"
   homepage "https://www.elastic.co/products/beats/packetbeat"
   url "https://github.com/elastic/beats.git",
-      tag:      "v8.14.2",
-      revision: "e9455e203842edf9086f34b3ca2fa2b08bc76081"
+      tag:      "v8.15.0",
+      revision: "76f45fe41cbd4436fba79c36be495d2e1af08243"
   license "Apache-2.0"
   head "https://github.com/elastic/beats.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c4ea500aa747055488d4a498671e9a3479c0c1a03c09c75cf79915a8fa8ade21"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "998782a4dd1ba51f0fd817b9e07f655dd05f8276d379e57ac8d4233ad7838beb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ac2ac5a4ad9cb1079e940b66bfd1140fc2df916edd8d3e6863c27ed437733035"
-    sha256 cellar: :any_skip_relocation, sonoma:         "25ac6568acf448c3436e889ba8f0e49b11135f41695373b482609fe4d176348e"
-    sha256 cellar: :any_skip_relocation, ventura:        "168bb658e20162cf9f76d9e18407c881a078429d193ae1d6c60e38a4e0f8c542"
-    sha256 cellar: :any_skip_relocation, monterey:       "c500697291bef50aaf728ca401b3cffbfb6e48de00fd433fb5bfd20a325473b2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b3a09be5b5aa80abc66363cbd990b26acbd8d4a91556eaf173a3572c7ddc075f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ec7316bd7c01ab491ca01602fa8db60970476d741903e32b0f11a64de9cc4d30"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7ec544fce3c672b0cda1a8abcf8cdddaf1999d0b852fa25676d06c2f29f49c1e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d8e7d2b5e1b7d2a7a65338096e6e52d1121b1c7e7f05c1bcc346374b9e23edfb"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a2cc83f19b97d72f90595ed71e3cb37cf7b688a1d250471248c6c8faa58e4f90"
+    sha256 cellar: :any_skip_relocation, ventura:        "f2771191795f54cb15a3b5c409fc7f06dbf79ad5685f0b7028b3b9005cc5e1b7"
+    sha256 cellar: :any_skip_relocation, monterey:       "ee7ffcab5c832fb03714c0460225bbf340bf823f06169f2132b0f37a903f7b27"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d107044abd8a6f3e24d50f6235829c5c5e1ee73c3330c1c9c88f8769f8127e1b"
   end
 
   depends_on "go" => :build
@@ -25,7 +25,7 @@ class Packetbeat < Formula
 
   def install
     # remove non open source files
-    rm_rf "x-pack"
+    rm_r("x-pack")
 
     cd "packetbeat" do
       # prevent downloading binary wheels during python setup

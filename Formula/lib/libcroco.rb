@@ -1,8 +1,9 @@
 class Libcroco < Formula
   desc "CSS parsing and manipulation toolkit for GNOME"
-  homepage "https://gitlab.gnome.org/GNOME/libcroco"
+  homepage "https://gitlab.gnome.org/Archive/libcroco"
   url "https://download.gnome.org/sources/libcroco/0.6/libcroco-0.6.13.tar.xz"
   sha256 "767ec234ae7aa684695b3a735548224888132e063f92db585759b422570621d4"
+  license "LGPL-2.1-or-later"
   revision 1
 
   bottle do
@@ -21,11 +22,19 @@ class Libcroco < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e0b5c4b0de56d524a572a2bd8c93f65ed827c80093776bfd7681fd6351df6e13"
   end
 
+  # Ref: https://gitlab.gnome.org/Archive/libcroco/-/issues/8
+  deprecate! date: "2024-08-04", because: :repo_archived
+
   depends_on "intltool" => :build
   depends_on "pkg-config" => :build
+
   depends_on "glib"
 
   uses_from_macos "libxml2"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
@@ -34,9 +43,7 @@ class Libcroco < Formula
   end
 
   def install
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--disable-Bsymbolic"
+    system "./configure", "--disable-Bsymbolic", *std_configure_args.reject { |s| s["--disable-debug"] }
     system "make", "install"
   end
 

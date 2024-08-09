@@ -24,6 +24,7 @@ class Openmama < Formula
   depends_on "qpid-proton"
 
   uses_from_macos "flex" => :build
+  uses_from_macos "ncurses"
 
   # UUID is provided by util-linux on Linux.
   on_linux do
@@ -48,7 +49,8 @@ class Openmama < Formula
   end
 
   test do
-    system "#{bin}/mamalistenc", "-?"
+    system bin/"mamalistenc", "-?"
+
     (testpath/"test.c").write <<~EOS
       #include <mama/mama.h>
       #include <stdio.h>
@@ -63,6 +65,7 @@ class Openmama < Formula
           return 0;
       }
     EOS
+
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lmama", "-o", "test"
     assert_includes shell_output("./test"), version.to_s
   end

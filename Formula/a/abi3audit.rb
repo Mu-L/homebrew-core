@@ -3,19 +3,18 @@ class Abi3audit < Formula
 
   desc "Scans Python packages for abi3 violations and inconsistencies"
   homepage "https://github.com/trailofbits/abi3audit"
-  url "https://files.pythonhosted.org/packages/98/8c/987d0c3fbc7e7ce2e1baa336d7cd68c6b0ffbf0237442c4e33175824eefa/abi3audit-0.0.10.tar.gz"
-  sha256 "a68af492ec3b373bd9329ed05b7bacdecd727a97b1d75921634c35d0e5f48de5"
+  url "https://files.pythonhosted.org/packages/fc/9f/30f21d93b511e250e5fd4987efffc48e3d840048d9a1fbdbb8f70e2f2387/abi3audit-0.0.14.tar.gz"
+  sha256 "2466815dd3fed35342a708f129962eebb8533eac7bc3bca864c8124b03580e4b"
   license "MIT"
-  revision 3
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "78c4f2dc8ebffa723b262740a0fde617a7f035fa2f61896e974de501140d7b70"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "78c4f2dc8ebffa723b262740a0fde617a7f035fa2f61896e974de501140d7b70"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "78c4f2dc8ebffa723b262740a0fde617a7f035fa2f61896e974de501140d7b70"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5d7601ca6d040d9138034f3ae880f270def25cdf26f445240b11473806c0b16a"
-    sha256 cellar: :any_skip_relocation, ventura:        "5d7601ca6d040d9138034f3ae880f270def25cdf26f445240b11473806c0b16a"
-    sha256 cellar: :any_skip_relocation, monterey:       "5d7601ca6d040d9138034f3ae880f270def25cdf26f445240b11473806c0b16a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "08f4106ce4abc24526bf62b46669bafe46b981a65cd5dc8d5fbafcd92442222a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "86095be3cfc643ab9ff507149c39cd0a69959ea2c3c45a4a535f82321837eb21"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "86095be3cfc643ab9ff507149c39cd0a69959ea2c3c45a4a535f82321837eb21"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "86095be3cfc643ab9ff507149c39cd0a69959ea2c3c45a4a535f82321837eb21"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ecbcf0d2258782d2310235bd19eb9457f20ad646f4d971a05de62b7c2dfaee8a"
+    sha256 cellar: :any_skip_relocation, ventura:        "ecbcf0d2258782d2310235bd19eb9457f20ad646f4d971a05de62b7c2dfaee8a"
+    sha256 cellar: :any_skip_relocation, monterey:       "28c4a9b0060fccaf8535cfcdf8c74a3064fd7417e6b158877825a0e7c38a7aa9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e6384e9edb179b26adacc2059d96e4250634fbae6910cd084b15b8b80db7c6f7"
   end
 
   depends_on "cmake" => :build
@@ -72,8 +71,8 @@ class Abi3audit < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/fb/2b/9b9c33ffed44ee921d0967086d653047286054117d584f1b1a7c22ceaf7b/packaging-23.2.tar.gz"
-    sha256 "048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5"
+    url "https://files.pythonhosted.org/packages/51/65/50db4dda066951078f0a96cf12f4b9ada6e4b811516bf0262c0f4f7064d4/packaging-24.1.tar.gz"
+    sha256 "026ed72c8ed3fcce5bf8950572258698927fd1dbda10a5e981cdf0ac37f4f002"
   end
 
   resource "pefile" do
@@ -97,8 +96,8 @@ class Abi3audit < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/9d/be/10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3/requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https://files.pythonhosted.org/packages/63/70/2bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913/requests-2.32.3.tar.gz"
+    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
   end
 
   resource "requests-cache" do

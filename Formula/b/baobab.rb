@@ -1,6 +1,6 @@
 class Baobab < Formula
   desc "Gnome disk usage analyzer"
-  homepage "https://wiki.gnome.org/Apps/Baobab"
+  homepage "https://apps.gnome.org/Baobab/"
   url "https://download.gnome.org/sources/baobab/46/baobab-46.0.tar.xz"
   sha256 "ce4def5c82d05671a5009f7bebcf85ac98675d9d8160d28ad9181b269a72e37c"
   license "GPL-2.0-or-later"
@@ -22,11 +22,18 @@ class Baobab < Formula
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
   depends_on "vala" => :build
+
   depends_on "adwaita-icon-theme"
+  depends_on "cairo"
   depends_on "glib"
   depends_on "gtk4"
   depends_on "hicolor-icon-theme"
   depends_on "libadwaita"
+  depends_on "pango"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
     # Work-around for build issue with Xcode 15.3

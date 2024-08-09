@@ -1,18 +1,18 @@
 class Overarch < Formula
   desc "Data driven description of software architecture"
   homepage "https://github.com/soulspace-org/overarch"
-  url "https://github.com/soulspace-org/overarch/releases/download/v0.25.0/overarch.jar"
-  sha256 "8a097dd59b0d73b01881081887e80fb999160ba733e7840655d659d176d079b2"
+  url "https://github.com/soulspace-org/overarch/releases/download/v0.29.1/overarch.jar"
+  sha256 "d7fbed38312180dd5f17ca6d8089458268095619b678fba4a1c1e52660d61d1f"
   license "EPL-1.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "94c201479a5a6f62ed584065ab558ffb7199c2ec46adcfeacd9e7144e80a0ec8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "94c201479a5a6f62ed584065ab558ffb7199c2ec46adcfeacd9e7144e80a0ec8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "94c201479a5a6f62ed584065ab558ffb7199c2ec46adcfeacd9e7144e80a0ec8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "94c201479a5a6f62ed584065ab558ffb7199c2ec46adcfeacd9e7144e80a0ec8"
-    sha256 cellar: :any_skip_relocation, ventura:        "94c201479a5a6f62ed584065ab558ffb7199c2ec46adcfeacd9e7144e80a0ec8"
-    sha256 cellar: :any_skip_relocation, monterey:       "94c201479a5a6f62ed584065ab558ffb7199c2ec46adcfeacd9e7144e80a0ec8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7b42cc620b3dcf681cfb57be94b89399794b7536d36fa502444d12b6ebc7d7ac"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3363eaa87a1637f544491951b53eb634c232ee574689b9941e3e50fc13256e74"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3363eaa87a1637f544491951b53eb634c232ee574689b9941e3e50fc13256e74"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3363eaa87a1637f544491951b53eb634c232ee574689b9941e3e50fc13256e74"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3363eaa87a1637f544491951b53eb634c232ee574689b9941e3e50fc13256e74"
+    sha256 cellar: :any_skip_relocation, ventura:        "3363eaa87a1637f544491951b53eb634c232ee574689b9941e3e50fc13256e74"
+    sha256 cellar: :any_skip_relocation, monterey:       "3363eaa87a1637f544491951b53eb634c232ee574689b9941e3e50fc13256e74"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1d52e9bc90c8fc0fff13c93041dd3ba4760b92c7292aff8db934e2a7c595c838"
   end
 
   head do
@@ -62,15 +62,15 @@ class Overarch < Formula
       Model Warnings:
       {:unresolved-refs-in-views (), :unresolved-refs-in-relations ()}
       Model Information:
-      {:namespaces {nil 3},
-       :relations 1,
-       :views-types {:container-view 1, :context-view 1},
-       :external {:internal 3},
-       :nodes-types {:person 1, :system 1},
-       :nodes 2,
-       :synthetic {:normal 3},
-       :relations-types {:rel 1},
-       :views 2}
+      {:nodes-by-type-count {:person 1, :system 1},
+       :nodes-count 2,
+       :views-by-type-count {:container-view 1, :context-view 1},
+       :relations-by-type-count {:rel 1},
+       :views-count 2,
+       :elements-by-namespace-count {nil 3},
+       :relations-count 1,
+       :synthetic-count {:normal 3},
+       :external-count {:internal 3}}
     EOS
     assert_equal expected, shell_output("#{bin}/overarch --model-dir=#{testpath} --model-info").chomp
   end

@@ -4,7 +4,7 @@ class Rtabmap < Formula
   url "https://github.com/introlab/rtabmap/archive/refs/tags/0.21.4.tar.gz"
   sha256 "242f8da7c5d20f86a0399d6cfdd1a755e64e9117a9fa250ed591c12f38209157"
   license "BSD-3-Clause"
-  revision 3
+  revision 4
   head "https://github.com/introlab/rtabmap.git", branch: "master"
 
   # Upstream doesn't create releases for all tagged versions, so we use the
@@ -15,13 +15,13 @@ class Rtabmap < Formula
   end
 
   bottle do
-    sha256                               arm64_sonoma:   "7ded9e75cd1ec90eff980ea4e6c0521b36589017bf0acb62217333e13587b6c1"
-    sha256                               arm64_ventura:  "7a754f0c9a97663b06b2e6d4d1981466d9be5d53e05944907d45566374c501ef"
-    sha256                               arm64_monterey: "90b2c03985689419a44adf25624956659fdbcb0a24fd270ec8d860ee6e270ec6"
-    sha256                               sonoma:         "be3dd2bdc5e8f370e6ff645d79c388fc94297e79b8cedf7371efa85a56d0a989"
-    sha256                               ventura:        "6ad77bc214708a2f7f75bf98196bf88f44ef4933a130a3d1604d91ec36e5e910"
-    sha256                               monterey:       "35a17b327683a640aeda1b244500e24e97f06b0fd4670f2a8876c08d5cfc9bc1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f78d18274347eb17d660b304b9a5be507bf7c3b33f8388bdb9c08ad06c02bd91"
+    sha256                               arm64_sonoma:   "044f39b72e342d5ed111d3a06b22ec22a4ce1b52a2c459d2424b11555a7510b7"
+    sha256                               arm64_ventura:  "2b82214040e0a479fa20b045257bbc25d8e2434e8e16d09fd2822aa4355bf607"
+    sha256                               arm64_monterey: "1ab33bdfd3292254434fabeffe0b4134604a577b640a1d172b48b0de37e6bc95"
+    sha256                               sonoma:         "c893cd17fde510783585075e15f39bf133680fd88714edc554a0192eaf570df8"
+    sha256                               ventura:        "47f0709305ba421ddbca0353ec414045e4b8f751d331419712b8010754f78127"
+    sha256                               monterey:       "d0089f725c5712c3e4f06d625eeab2590712390d72ea95bf10307d93fc759189"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a66f6cb1a14b01eaf94fa9fe15b28645ead7246d98e10cd2713a1a166f78cbe0"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -31,6 +31,22 @@ class Rtabmap < Formula
   depends_on "opencv"
   depends_on "pcl"
   depends_on "pdal"
+  depends_on "qt"
+  depends_on "sqlite"
+  depends_on "vtk"
+
+  uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "boost"
+    depends_on "flann"
+    depends_on "glew"
+    depends_on "libomp"
+    depends_on "libpcap"
+    depends_on "libpng"
+    depends_on "lz4"
+    depends_on "qhull"
+  end
 
   def install
     # Work around an Xcode 15 linker issue which causes linkage against LLVM's
@@ -45,7 +61,8 @@ class Rtabmap < Formula
     args = %W[
       -DCMAKE_INSTALL_RPATH=#{rpath}
     ]
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, *args
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
@@ -85,10 +102,12 @@ class Rtabmap < Formula
         return 0;
       }
     EOS
+
     args = std_cmake_args
     args << "-DCMAKE_BUILD_RPATH=#{lib}" if OS.linux?
-    system "cmake", ".", *args, "-DCMAKE_VERBOSE_MAKEFILE=ON", "-DRTABMap_DIR=#{rtabmap_dir}"
-    system "make"
-    assert_equal version.to_s, shell_output("./test").strip
+
+    system "cmake", "-S", ".", "-B", "build", *args, "-DCMAKE_VERBOSE_MAKEFILE=ON", "-DRTABMap_DIR=#{rtabmap_dir}"
+    system "cmake", "--build", "build"
+    assert_equal version.to_s, shell_output("./build/test").strip
   end
 end

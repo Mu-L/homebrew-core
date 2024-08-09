@@ -1,8 +1,8 @@
 class Gleam < Formula
   desc "Statically typed language for the Erlang VM"
   homepage "https://gleam.run"
-  url "https://github.com/gleam-lang/gleam/archive/refs/tags/v1.3.1.tar.gz"
-  sha256 "ad8b74c80373b6f80f2a6e8182441b972e2c70136dfb17befa2fb105f32868ad"
+  url "https://github.com/gleam-lang/gleam/archive/refs/tags/v1.4.1.tar.gz"
+  sha256 "1a3826d2d36f5442be34ec749895b03ed1538ef28e59b0134ff4001468f095f7"
   license "Apache-2.0"
   head "https://github.com/gleam-lang/gleam.git", branch: "main"
 
@@ -12,13 +12,13 @@ class Gleam < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f08c9382f2d268efc165e73c1ff7fb776fda82bf39793bfdd9e086cdc3da3d77"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "99a68093ba5da20e29296f0826e8c28da19b6a875a1ecaceb6b547be7468c87f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c18a96fa332ff86f5d38b8cd1100375af40ee1b353542afd14d831a65a6159aa"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1e89d4e83c49358ea10fabdf9da7a92aa99b9632b23d30acab3c52f7b9124654"
-    sha256 cellar: :any_skip_relocation, ventura:        "c38f33204619bd7cb27d610c79591a8be1ffab8b24d7acf8e26086a741658ac3"
-    sha256 cellar: :any_skip_relocation, monterey:       "8566e174e4637fb1e506af9bf14e2275043cbeb8711a6bf47975e1e1edaddab8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a73bed2c2c5f09dfa970128004b795262a2a1e2daa30bc1a2bc12bf2ab497945"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "078d0f9059b0212f80640d5c8fc808a9d79286d8e3975a607223d59e8b173238"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "045c1be55b12b71ddf2d3e99e1c7abc4e5bf080a45e8eab02503ce63be53f3b9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1362e71fb602d54787209a7cf697a5d4955408b4c4fce2ae2d04cd481d70fcd7"
+    sha256 cellar: :any_skip_relocation, sonoma:         "dca4ad782629279401558b6d6facc423a4213e8c341fa55b84125f7ea756832d"
+    sha256 cellar: :any_skip_relocation, ventura:        "23845f27a4360739e825c7254445bd233ade9fb4ca418d20f45b2582e95e18de"
+    sha256 cellar: :any_skip_relocation, monterey:       "7dc7e4cad455bf274fc75a7e6af4e0af1f3057bfe83d58582b2c4055784184b1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "61fd76b1898aab487d851b32376a87f453782cfc1ff03d6bbb6f8921dcde7200"
   end
 
   depends_on "rust" => :build

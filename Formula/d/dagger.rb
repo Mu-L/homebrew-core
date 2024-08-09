@@ -2,8 +2,8 @@ class Dagger < Formula
   desc "Portable devkit for CI/CD pipelines"
   homepage "https://dagger.io"
   url "https://github.com/dagger/dagger.git",
-      tag:      "v0.11.9",
-      revision: "18fd28cfa8f2e5d5f2ccc58fb15a4a975a3660dd"
+      tag:      "v0.12.4",
+      revision: "c0d2d86f30df377f3245b828b84112b3e849c355"
   license "Apache-2.0"
   head "https://github.com/dagger/dagger.git", branch: "main"
 
@@ -13,13 +13,13 @@ class Dagger < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0442d26c18bc0bab3f4d087b9495718c534858dcdaee89bd914128dd4b39244a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "85608197ffee0bf796a28c871129e1a7e859146ecde3de625f3aa041662a2c8e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "366d363c87e2554371bdd71b097cd14aa85d6056ed662141bb905abbc4012cd9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "eb3d862c31774afe649feabd20b612644e3c178a26bfa016d71ecad2d3e5f83d"
-    sha256 cellar: :any_skip_relocation, ventura:        "8ff3385774ed7f90ef6718a5d02ac6bf41fdbe90bbff843e5f1be2223b64b4f4"
-    sha256 cellar: :any_skip_relocation, monterey:       "4b188c64e2b1e55951db50a9723e07da25c5bcd42be0a38d3f9c43685923419e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "478aaa611d295b4edb5a8d25ae21e1977370f794a0d8a095fe475109972892c2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "48f66495ba9dfdff8297b146c9d978cad1d143a10096aa11c305f27493d8aab4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1a0df27fc36ece7019dc9edcc273cc5ec12948c46de7542954d453a685a853b0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1f2197a23babc772ed4bdc484813202869c1688d31650230d4956d969515f6c3"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3f6491ec0a01f44c86848eccae4b43eff85148b279fd6ae25554af2ad3e3c8a1"
+    sha256 cellar: :any_skip_relocation, ventura:        "7527e796947c7495c678fd8f86cb60014743a1d63c58048ee8529de9b10259cd"
+    sha256 cellar: :any_skip_relocation, monterey:       "c05ad82ff4c9f3b1d1c115844891d83d96daeb8bffa5a08b20e6b1b4e692a546"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "425e0ec43d0f18636a85d1d3d199185e346f3404750ac714ea9db72fb4e20e75"
   end
 
   depends_on "go" => :build
@@ -29,6 +29,7 @@ class Dagger < Formula
     ldflags = %W[
       -s -w
       -X github.com/dagger/dagger/engine.Version=v#{version}
+      -X github.com/dagger/dagger/engine.Tag=v#{version}
     ]
     system "go", "build", *std_go_args(ldflags:), "./cmd/dagger"
 

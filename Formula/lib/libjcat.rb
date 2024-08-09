@@ -25,9 +25,15 @@ class Libjcat < Formula
   depends_on "pkg-config" => :build
   depends_on "python@3.12" => :build
   depends_on "vala" => :build
+
   depends_on "glib"
   depends_on "gnutls"
   depends_on "json-glib"
+  depends_on "nettle"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
     rewrite_shebang detected_python_shebang, "contrib/generate-version-script.py"
@@ -42,7 +48,7 @@ class Libjcat < Formula
   end
 
   test do
-    system "#{bin}/jcat-tool", "-h"
+    system bin/"jcat-tool", "-h"
     (testpath/"test.c").write <<~EOS
       #include <jcat.h>
       int main(int argc, char *argv[]) {
