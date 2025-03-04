@@ -122,7 +122,6 @@ asak
 ascii
 asciidoctor
 asciidoctorj
-asciigen
 asdf
 asio
 ask-cli
@@ -1178,6 +1177,7 @@ ginac
 gismo
 git-absorb
 git-annex
+git-cinnabar
 git-cliff
 git-codereview
 git-cola
@@ -1229,9 +1229,11 @@ glibmm@2.66
 glider
 glm
 global
+globstar
 glooctl
 glow
 glslang
+glyph
 gmailctl
 gmic
 gmime
@@ -1303,6 +1305,7 @@ gotestsum
 gotestwaf
 gotify
 gotpm
+gotz
 gource
 govc
 govulncheck
@@ -1490,6 +1493,7 @@ imgdiet
 imgp
 imgproxy
 immich-cli
+immich-go
 immortal
 immudb
 imposm3
@@ -1623,6 +1627,7 @@ k6
 k8sgpt
 k9s
 kafka
+kafkactl
 kahip
 kakoune
 kalker
@@ -1631,6 +1636,7 @@ kamal-proxy
 kamel
 kanata
 kapacitor
+kapp
 karmadactl
 kaskade
 katana
@@ -1731,6 +1737,7 @@ languagetool
 languagetool-rust
 lanraragi
 lapack
+largetifftools
 lastpass-cli
 lastz
 laszip
@@ -2088,6 +2095,7 @@ manim
 manticoresearch
 mantra
 mapcidr
+mapnik
 mapproxy
 mapserver
 mariadb
@@ -2309,6 +2317,7 @@ nerdfix
 nest
 nestopia-ue
 netaddr
+netcdf
 nethogs
 netlify-cli
 nettle
@@ -2490,6 +2499,7 @@ orbuculum
 orc
 orc-tools
 ord
+org-formation
 orgalorg
 orientdb
 ormolu
@@ -2509,6 +2519,7 @@ osv-scanner
 otree
 ots
 ott
+ov
 overarch
 overmind
 overtls
@@ -2736,6 +2747,7 @@ pueue
 pug
 pugixml
 pulsarctl
+punktf
 pure
 pure-ftpd
 purescript
@@ -3012,6 +3024,8 @@ sdl2_mixer
 sdl2_sound
 sdl2_ttf
 sdl3
+sdl3_image
+sdl3_ttf
 sdns
 seal
 seam
@@ -3022,12 +3036,14 @@ securefs
 selene
 selenium-server
 semgrep
+semver
 sendme
 sentencepiece
 sentry-cli
 seqkit
 sequin
 sequoia-sq
+sequoia-sqv
 ser2net
 serd
 serf
@@ -3151,6 +3167,7 @@ spacer
 spack
 spades
 spatialindex
+spawn-fcgi
 spdlog
 spectra
 spectral-cli
@@ -3232,6 +3249,7 @@ stripe-cli
 stripe-mock
 strongswan
 structurizr-cli
+sttr
 stunnel
 stylelint
 stylish-haskell
@@ -3386,6 +3404,7 @@ tippecanoe
 titlecase
 tkey-ssh-agent
 tlsx
+tml
 tmpmail
 tmt
 tmux-mem-cpu-load
@@ -3394,6 +3413,7 @@ tmux-xpanes
 tmuxp
 tmx
 toast
+todoist
 todoman
 tofuenv
 toipe
@@ -3428,6 +3448,7 @@ translate-toolkit
 transmission-cli
 trash-cli
 travis
+trdsql
 tree
 tree-sitter
 treefmt
@@ -3736,6 +3757,7 @@ youtubeuploader
 yozefu
 yq
 yt-dlp
+ytt
 yubico-piv-tool
 yyjson
 z.lua
