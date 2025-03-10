@@ -3,18 +3,18 @@ class Ipython < Formula
 
   desc "Interactive computing in Python"
   homepage "https://ipython.org/"
-  url "https://files.pythonhosted.org/packages/de/39/264894738a202ddaf6abae39b3f84671ddee23fd292dbb3e10039e70300c/ipython-9.0.0.tar.gz"
-  sha256 "9368d65b3d4a471e9a698fed3ea486bbf6737e45111e915279c971b77f974397"
+  url "https://files.pythonhosted.org/packages/7d/ce/012a0f40ca58a966f87a6e894d6828e2817657cbdf522b02a5d3a87d92ce/ipython-9.0.2.tar.gz"
+  sha256 "ec7b479e3e5656bf4f58c652c120494df1820f4f28f522fb7ca09e213c2aab52"
   license "BSD-3-Clause"
   head "https://github.com/ipython/ipython.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "efcaa7aaf499974ed5196554c9c76581fc297b90c7def21aae4d1b66f23659c9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "efcaa7aaf499974ed5196554c9c76581fc297b90c7def21aae4d1b66f23659c9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "efcaa7aaf499974ed5196554c9c76581fc297b90c7def21aae4d1b66f23659c9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7a60c5a80c96e7858084bda23a6a6d8a5cad40d5daffc1d0ab3f559498b48add"
-    sha256 cellar: :any_skip_relocation, ventura:       "7a60c5a80c96e7858084bda23a6a6d8a5cad40d5daffc1d0ab3f559498b48add"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "efcaa7aaf499974ed5196554c9c76581fc297b90c7def21aae4d1b66f23659c9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "623d6b3cc99c59835bf8a46f46406ac12351b4686fd8bee6d69d4508c19c5e0c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "623d6b3cc99c59835bf8a46f46406ac12351b4686fd8bee6d69d4508c19c5e0c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "623d6b3cc99c59835bf8a46f46406ac12351b4686fd8bee6d69d4508c19c5e0c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "444454a9b10c7788ef4103bdb222b74c4754ed3cacdb548c5fb785a1fd195149"
+    sha256 cellar: :any_skip_relocation, ventura:       "444454a9b10c7788ef4103bdb222b74c4754ed3cacdb548c5fb785a1fd195149"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "623d6b3cc99c59835bf8a46f46406ac12351b4686fd8bee6d69d4508c19c5e0c"
   end
 
   depends_on "python@3.13"

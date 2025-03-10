@@ -285,6 +285,9 @@
     "package_name": "dvc[all]",
     "exclude_packages": ["certifi", "cryptography", "numpy", "pygit2"]
   },
+  "dvr-scan": {
+    "exclude_packages": ["numpy"]
+  },
   "dxpy": {
     "exclude_packages": ["cryptography", "certifi"]
   },
@@ -317,6 +320,10 @@
   "fastapi": {
     "package_name": "fastapi[standard]",
     "exclude_packages": ["certifi"]
+  },
+  "fb-client": {
+    "package_name": "",
+    "extra_packages": ["pycurl", "pyxdg"]
   },
   "fdroidserver": {
     "package_name": "fdroidserver[optional]",
@@ -413,7 +420,7 @@
   },
   "harlequin": {
     "package_name": "harlequin[mysql,odbc,postgres]",
-    "exclude_packages": ["psycopg-binary", "tree-sitter-languages"],
+    "exclude_packages": ["numpy", "psycopg-binary", "tree-sitter-languages"],
     "extra_packages": ["psycopg-c"]
   },
   "hatch": {
@@ -470,7 +477,7 @@
     "exclude_packages": ["certifi"]
   },
   "kaskade": {
-    "exclude_packages": ["certifi"]
+    "exclude_packages": ["certifi", "cryptography"]
   },
   "keeper-commander": {
     "exclude_packages": ["certifi", "cryptography"]
@@ -755,6 +762,9 @@
   "robot-framework": {
     "extra_packages": ["robotframework-archivelibrary", "robotframework-selenium2library", "robotframework-sshlibrary"],
     "exclude_packages": ["certifi", "cryptography"]
+  },
+  "rpds-py": {
+    "extra_packages": ["setuptools-rust"]
   },
   "ruff-lsp": {
     "exclude_packages": ["ruff"]

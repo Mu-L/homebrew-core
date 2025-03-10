@@ -1,18 +1,17 @@
 class Libheif < Formula
   desc "ISO/IEC 23008-12:2017 HEIF file format decoder and encoder"
   homepage "https://www.libde265.org/"
-  url "https://github.com/strukturag/libheif/releases/download/v1.19.5/libheif-1.19.5.tar.gz"
-  sha256 "d3cf0a76076115a070f9bc87cf5259b333a1f05806500045338798486d0afbaf"
+  url "https://github.com/strukturag/libheif/releases/download/v1.19.7/libheif-1.19.7.tar.gz"
+  sha256 "161c042d2102665fcee3ded851c78a0eb5f2d4bfe39fba48ba6e588fd6e964f3"
   license "LGPL-3.0-only"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a5052734e22ea07d74011fe52ca8702df87b19319ba0da9ba97539ac4f95e91f"
-    sha256 cellar: :any,                 arm64_sonoma:  "0a662ff4f01bc187dde030514f06c63d19f6d38d9f6da98e30cb37e2c05fab14"
-    sha256 cellar: :any,                 arm64_ventura: "d6958d903f6a5c916f9964b2d9111000399ddefcc90f934cc75da7fda3ec3d45"
-    sha256 cellar: :any,                 sonoma:        "93a936ad661d0d727be5f9c5c060b757ba2baac5961b8cc360f6cc4cf24cbfd7"
-    sha256 cellar: :any,                 ventura:       "9d4afb170b02f4098207199a480a17cd7a74001e7ecd82515b514f2251fead9c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "edbac079f2fd763a2b656db04e1be6e765468be32ae1a02b83e237f327854054"
+    sha256 cellar: :any,                 arm64_sequoia: "0fc06cce535f6a1131182337ac5a50aa220f6a61b879db94002634483e1a5c3d"
+    sha256 cellar: :any,                 arm64_sonoma:  "09a066bd6db3bf2816defde4d0e8523cc0c77a9725bf6bb82962b491a2e70163"
+    sha256 cellar: :any,                 arm64_ventura: "bd4e27af3a4bcab55291ccb64b5837988ff053a9a4f9e3a5e855f099a3edf759"
+    sha256 cellar: :any,                 sonoma:        "7b0171ccd79095f52a6c16bde48c370d7b5ac047f0c0265dc0aa3e7cd59519f0"
+    sha256 cellar: :any,                 ventura:       "c093278679c0869f9f711c95e6b65b145d3e888de96608e1a5fe1f4734e3a2b2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f95e3f3388b36bf3a81c226356158d7c045ba320d1d84a839c89e40d25a7d3eb"
   end
 
   depends_on "cmake" => :build

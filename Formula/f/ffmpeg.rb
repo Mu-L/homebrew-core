@@ -4,17 +4,18 @@ class Ffmpeg < Formula
   # None of these parts are used by default, you have to explicitly pass `--enable-gpl`
   # to configure to activate them. In this case, FFmpeg's license changes to GPL v2+.
   license "GPL-2.0-or-later"
-  revision 4
+  revision 1
+
   head "https://github.com/FFmpeg/FFmpeg.git", branch: "master"
 
   stable do
-    url "https://ffmpeg.org/releases/ffmpeg-7.1.tar.xz"
-    sha256 "40973d44970dbc83ef302b0609f2e74982be2d85916dd2ee7472d30678a7abe6"
+    url "https://ffmpeg.org/releases/ffmpeg-7.1.1.tar.xz"
+    sha256 "733984395e0dbbe5c046abda2dc49a5544e7e0e1e2366bba849222ae9e3a03b1"
 
-    # Backport fix needed for recent x265 (v4.1 is X265_BUILD=215)
+    # Backport support for recent svt-av1 (3.0.0)
     patch do
-      url "https://github.com/FFmpeg/FFmpeg/commit/099f88b8641dfc299f3896d17d9addc5b9ae7799.patch?full_index=1"
-      sha256 "43677660210523f0eb6db93c4ac9c7943c959116951a5859e6f14568b4392a59"
+      url "https://github.com/FFmpeg/FFmpeg/commit/d1ed5c06e3edc5f2b5f3664c80121fa55b0baa95.patch?full_index=1"
+      sha256 "0eb23ab90c0e5904590731dd3b81c86a4127785bc2b367267d77723990fb94a2"
     end
   end
 
@@ -24,13 +25,12 @@ class Ffmpeg < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sequoia: "dc9c14c6a2012ffbfd8edc71ab2f3c2d1ccddce3a9dbb02a3054078223f1642b"
-    sha256 arm64_sonoma:  "20bec802778d6466d8d53ebe5d56db49e6a6e72ed99a8b3b6231e448db68aa4e"
-    sha256 arm64_ventura: "07ca463e1102cd39b55d72c1e074d1d09050a06b5504eea4231570faeb16855d"
-    sha256 sonoma:        "6d6e0ef09f39c9ffc3169a0dc7ad91a70d901c2d4e41702292820ce2b6d5b631"
-    sha256 ventura:       "a022f69edc0197a41ae1ac786b9c3345fe141b5fee1dab8ff895b85feebb51b6"
-    sha256 x86_64_linux:  "e3fed64971ccc8cabeccb8f7e37e9ee25fb84845da5a56513c881f0377d6bc35"
+    sha256 arm64_sequoia: "56bc79c6948de8961c0cfd4199f45d346962a7e073e60c76cc93fa32d3075be4"
+    sha256 arm64_sonoma:  "9a9fc0c1fd68fb2a4f44fa438ea5cc66277d7967c7e6bbbac7671021d5da5b30"
+    sha256 arm64_ventura: "d586aaab950e703be754350c97dc46278b6b8644376306461b1b2bc9ab508eaa"
+    sha256 sonoma:        "85ebb6e65226b2d72e1f436e2afc0b22a84cd80760bee0f40c60c9a77a1dd028"
+    sha256 ventura:       "1589d333d214232b2e317c9dea13e3b3d5abaa3b78a524c44316ed9050723c53"
+    sha256 x86_64_linux:  "a11b8453bbf44bca69529d299e7fa0476075c9f4c1be3a4d311947152b26681e"
   end
 
   depends_on "pkgconf" => :build
