@@ -40,6 +40,7 @@ alda
 alembic
 algernon
 algol68g
+algolia
 aliae
 aliddns
 aliyun-cli
@@ -122,7 +123,6 @@ asak
 ascii
 asciidoctor
 asciidoctorj
-asciigen
 asdf
 asio
 ask-cli
@@ -366,6 +366,7 @@ cadical
 caf
 cahute
 caire
+cairo
 cake
 calc
 calceph
@@ -679,6 +680,7 @@ cucumber-ruby
 cue
 cups
 curl
+curlie
 cvs-fast-export
 cweb
 cxgo
@@ -950,6 +952,7 @@ etcd
 etcd-cpp-apiv3
 ethereum
 eva
+evans
 evince
 evtx
 exercism
@@ -963,6 +966,7 @@ eza
 f2
 f3d
 faac
+faad2
 faas-cli
 fabio
 fabric
@@ -1076,6 +1080,7 @@ foreman
 forgit
 fork-cleaner
 fortio
+fortitude
 fortls
 fossil
 fourmolu
@@ -1127,6 +1132,7 @@ gambit
 game-music-emu
 gammaray
 garble
+garnet
 gat
 gateway-go
 gator
@@ -1156,6 +1162,7 @@ geoipupdate
 geos
 geoserver
 geph4
+gersemi
 getmail6
 gettext
 gexiv2
@@ -1178,6 +1185,7 @@ ginac
 gismo
 git-absorb
 git-annex
+git-cinnabar
 git-cliff
 git-codereview
 git-cola
@@ -1193,6 +1201,7 @@ git-lfs
 git-machete
 git-mob
 git-quick-stats
+git-remote-hg
 git-review
 git-split-diffs
 git-subrepo
@@ -1229,9 +1238,11 @@ glibmm@2.66
 glider
 glm
 global
+globstar
 glooctl
 glow
 glslang
+glyph
 gmailctl
 gmic
 gmime
@@ -1259,7 +1270,7 @@ go-feature-flag-relay-proxy
 go-md2man
 go-size-analyzer
 go-task
-go@1.22
+go@1.23
 goaccess
 goawk
 gobject-introspection
@@ -1303,6 +1314,7 @@ gotestsum
 gotestwaf
 gotify
 gotpm
+gotz
 gource
 govc
 govulncheck
@@ -1345,7 +1357,6 @@ groonga
 groovy
 groovysdk
 grpc
-grpc-swift
 grpcui
 grype
 gsan
@@ -1439,6 +1450,7 @@ hopenpgp-tools
 hoverfly
 howard-hinnant-date
 hpack
+hr
 hsd
 html-xml-utils
 html2markdown
@@ -1490,6 +1502,7 @@ imgdiet
 imgp
 imgproxy
 immich-cli
+immich-go
 immortal
 immudb
 imposm3
@@ -1557,6 +1570,7 @@ jd
 jdnssec-tools
 jena
 jenkins
+jenkins-cli
 jenkins-job-builder
 jenkins-lts
 jerryscript
@@ -1623,6 +1637,7 @@ k6
 k8sgpt
 k9s
 kafka
+kafkactl
 kahip
 kakoune
 kalker
@@ -1631,9 +1646,11 @@ kamal-proxy
 kamel
 kanata
 kapacitor
+kapp
 karmadactl
 kaskade
 katana
+kbld
 kcat
 kcgi
 kcov
@@ -1731,6 +1748,7 @@ languagetool
 languagetool-rust
 lanraragi
 lapack
+largetifftools
 lastpass-cli
 lastz
 laszip
@@ -1748,7 +1766,6 @@ lcm
 lcov
 ld-find-code-refs
 ldc
-ldeep
 ldns
 leaf-proxy
 leakcanary-shark
@@ -2088,6 +2105,7 @@ manim
 manticoresearch
 mantra
 mapcidr
+mapnik
 mapproxy
 mapserver
 mariadb
@@ -2309,6 +2327,8 @@ nerdfix
 nest
 nestopia-ue
 netaddr
+netcdf
+netfetch
 nethogs
 netlify-cli
 nettle
@@ -2344,11 +2364,13 @@ node@18
 node@20
 node@22
 nodeenv
+nom
 nomino
 nopoll
 noseyparker
 notation
 notcurses
+noti
 notify
 nox
 nping
@@ -2490,6 +2512,7 @@ orbuculum
 orc
 orc-tools
 ord
+org-formation
 orgalorg
 orientdb
 ormolu
@@ -2506,9 +2529,11 @@ osmium-tool
 ospray
 osslsigncode
 osv-scanner
+otel-cli
 otree
 ots
 ott
+ov
 overarch
 overmind
 overtls
@@ -2584,6 +2609,7 @@ pg_cron
 pg_partman
 pgbadger
 pgbouncer
+pgcli
 pgpool-ii
 pgrok
 pgroonga
@@ -2715,6 +2741,7 @@ protobuf-c
 protoc-gen-go
 protoc-gen-go-grpc
 protoc-gen-grpc-java
+protoc-gen-grpc-swift
 protoc-gen-grpc-web
 protolint
 prowler
@@ -2736,6 +2763,7 @@ pueue
 pug
 pugixml
 pulsarctl
+punktf
 pure
 pure-ftpd
 purescript
@@ -2804,6 +2832,7 @@ qtkeychain
 quantlib
 quantum++
 quasi88
+quazip
 questdb
 quick-lint-js
 quicktype
@@ -2831,6 +2860,7 @@ ratchet
 ratfor
 ratify
 rattler-build
+rattler-index
 rav1e
 raven
 raxml-ng
@@ -2873,6 +2903,7 @@ reposurgeon
 repren
 reproc
 restic
+restish
 restview
 resvg
 retire
@@ -2881,6 +2912,7 @@ reveal-md
 revive
 rex
 rgbds
+rhai
 rhash
 rhino
 rhit
@@ -2912,6 +2944,7 @@ roswell
 rover
 roxctl
 rp
+rpds-py
 rpg-cli
 rpki-client
 rpl
@@ -3012,6 +3045,8 @@ sdl2_mixer
 sdl2_sound
 sdl2_ttf
 sdl3
+sdl3_image
+sdl3_ttf
 sdns
 seal
 seam
@@ -3022,12 +3057,14 @@ securefs
 selene
 selenium-server
 semgrep
+semver
 sendme
 sentencepiece
 sentry-cli
 seqkit
 sequin
 sequoia-sq
+sequoia-sqv
 ser2net
 serd
 serf
@@ -3126,6 +3163,7 @@ snowflake-cli
 snyk-cli
 soapyremote
 socat
+soci
 socket_vmnet
 soft-serve
 solana
@@ -3151,6 +3189,7 @@ spacer
 spack
 spades
 spatialindex
+spawn-fcgi
 spdlog
 spectra
 spectral-cli
@@ -3232,6 +3271,7 @@ stripe-cli
 stripe-mock
 strongswan
 structurizr-cli
+sttr
 stunnel
 stylelint
 stylish-haskell
@@ -3363,6 +3403,7 @@ tfproviderlint
 tfschema
 tfsec
 tfupdate
+tgenv
 tgpt
 tgui
 thanos
@@ -3386,6 +3427,7 @@ tippecanoe
 titlecase
 tkey-ssh-agent
 tlsx
+tml
 tmpmail
 tmt
 tmux-mem-cpu-load
@@ -3394,6 +3436,7 @@ tmux-xpanes
 tmuxp
 tmx
 toast
+todoist
 todoman
 tofuenv
 toipe
@@ -3428,6 +3471,7 @@ translate-toolkit
 transmission-cli
 trash-cli
 travis
+trdsql
 tree
 tree-sitter
 treefmt
@@ -3455,6 +3499,7 @@ typescript-language-server
 typeshare
 typewritten
 typical
+typioca
 typos-cli
 typos-lsp
 typst
@@ -3570,6 +3615,8 @@ volta
 votca
 vpn-slice
 vrc-get
+vsce
+vscli
 vscode-langservers-extracted
 vsearch
 vsh
@@ -3736,6 +3783,7 @@ youtubeuploader
 yozefu
 yq
 yt-dlp
+ytt
 yubico-piv-tool
 yyjson
 z.lua

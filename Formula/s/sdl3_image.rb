@@ -1,18 +1,18 @@
 class Sdl3Image < Formula
   desc "Library for loading images as SDL surfaces and textures"
   homepage "https://github.com/libsdl-org/SDL_image"
-  url "https://github.com/libsdl-org/SDL_image/releases/download/release-3.2.0/SDL3_image-3.2.0.tar.gz"
-  sha256 "1690baea71b2b4ded9895126cddbc03a1000b027d099a4fb4669c4d23d73b19f"
+  url "https://github.com/libsdl-org/SDL_image/releases/download/release-3.2.4/SDL3_image-3.2.4.tar.gz"
+  sha256 "a725bd6d04261fdda0dd8d950659e1dc15a8065d025275ef460d32ae7dcfc182"
   license "Zlib"
   head "https://github.com/libsdl-org/SDL_image.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "7b4a40bd5b49da068f9f7b1aa6416ea1608435a6b962880d1f4005b3c12c63c3"
-    sha256 cellar: :any,                 arm64_sonoma:  "ce64145b5f82c159ee9791c5bdb8a2d44090b3de8851f8454458f8b2124c43cb"
-    sha256 cellar: :any,                 arm64_ventura: "b2576e6ef14d01ef979668451f3894258e3f4ec10620f974cf276f06a1a6a49c"
-    sha256 cellar: :any,                 sonoma:        "0a5582939101f4c5fddc3cc4a17f288778a55b18164412b059c9fc503bcaf752"
-    sha256 cellar: :any,                 ventura:       "5db9220c012cc50214d03950d86eab0aca7d529387e3119706fc66216def2ff2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7a4806be12a2ccd946d99cdfdf6ed5022ee19a35091da9222845cae2e1bceb23"
+    sha256 cellar: :any,                 arm64_sequoia: "784b36fb3b932e3001d88f6bef9922b70ed8f39a24262dbce396224d15bab222"
+    sha256 cellar: :any,                 arm64_sonoma:  "40e186a16a24afb506bce144f202e557360eac08062f03af5f5b1ebcb68ddac0"
+    sha256 cellar: :any,                 arm64_ventura: "e573dabef0b0281c03906bdca0dad06fbfeed385562e9b77b0d89e1dc0152f66"
+    sha256 cellar: :any,                 sonoma:        "36d6f234b606db2282c7ed6cb1f747a48f20f12478895f802054a9ff26f5fc5d"
+    sha256 cellar: :any,                 ventura:       "4dbafe776dd24e700747ff4d1cae8211d4ad35d7ca0eca0438e73b523d2d1030"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f36d6a7393c7b4da3cc884be73b8652e8d0bc93e337f246203c0daec81c293d1"
   end
 
   depends_on "cmake" => :build

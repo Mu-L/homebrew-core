@@ -1,20 +1,18 @@
 class GatewayGo < Formula
   desc "GateWay Client for OpenIoTHub"
   homepage "https://github.com/OpenIoTHub"
-  url "https://github.com/OpenIoTHub/gateway-go/archive/refs/tags/v0.3.4.tar.gz"
-  sha256 "77001d6db5019a292db7b2f81fa005fed77316872859879b03f27a76247b1a6d"
+  url "https://github.com/OpenIoTHub/gateway-go/archive/refs/tags/v0.3.17.tar.gz"
+  sha256 "18f2ded1b263ccff74c93ec5973c43618934c8427e11a400d94b15c75f16ce49"
   license "MIT"
   head "https://github.com/OpenIoTHub/gateway-go.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "64aad01698044023d65cf68e331110384832a43675bae1181b3f4ad5f07315ca"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "abec10f08360554d2f79ab0559b887304029069b5c36a30c7c56159819d086f3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "abec10f08360554d2f79ab0559b887304029069b5c36a30c7c56159819d086f3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "abec10f08360554d2f79ab0559b887304029069b5c36a30c7c56159819d086f3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "393ebb53edf3423fe6e3e8c487838a3fc5cde4953d004453a1b731b499831967"
-    sha256 cellar: :any_skip_relocation, ventura:        "393ebb53edf3423fe6e3e8c487838a3fc5cde4953d004453a1b731b499831967"
-    sha256 cellar: :any_skip_relocation, monterey:       "393ebb53edf3423fe6e3e8c487838a3fc5cde4953d004453a1b731b499831967"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6a802cbc78f87b2198602c52977e393bb8fb997774575c35aed49917a474526b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ec8f30c31f1902c0abcc1b0424b0c3a67846945f572c0a22e72410fd328a5ee3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "58d9758575b99d90f9681be588fc7ef440f9d2439f136e02e9b2f7ba377c570c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b530e727c7d19f1da0b92c5798e1af9f2fe3a3ebb461f52fc29d9a2aca61e9ab"
+    sha256 cellar: :any_skip_relocation, sonoma:        "46e230a6bd722c315a653237fc3bd6df3798d7b18aacf625c0433a317b5e5301"
+    sha256 cellar: :any_skip_relocation, ventura:       "8b6ef616e3ab6e665618256aafd206527b9317ec0ee9b971f2effb02e5d505a3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f31f0f42d0b31ccbbe351db32d632ac57c1c2d50447bf3242df361d8c2b5a88b"
   end
 
   depends_on "go" => :build
@@ -22,9 +20,10 @@ class GatewayGo < Formula
   def install
     ldflags = %W[
       -s -w
-      -X main.version=#{version}
-      -X main.commit=
-      -X main.builtBy=homebrew
+      -X github.com/OpenIoTHub/gateway-go/info.Version=#{version}
+      -X github.com/OpenIoTHub/gateway-go/info.Commit=
+      -X github.com/OpenIoTHub/gateway-go/info.Date=#{Time.now.iso8601}
+      -X github.com/OpenIoTHub/gateway-go/info.BuiltBy=homebrew
     ]
     system "go", "build", *std_go_args(ldflags:)
     (etc/"gateway-go").install "gateway-go.yaml"

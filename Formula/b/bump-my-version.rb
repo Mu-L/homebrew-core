@@ -3,18 +3,18 @@ class BumpMyVersion < Formula
 
   desc "Version bump your Python project"
   homepage "https://callowayproject.github.io/bump-my-version/"
-  url "https://files.pythonhosted.org/packages/b9/4c/535904dd2575b40ba672e333808521a8f93a8e30c5fb0bfb9051813fa17e/bump_my_version-0.32.2.tar.gz"
-  sha256 "fc1c686af66c39c44d2f19c4d29597fcc2f938bc19046b8df26bfa44c93f11c0"
+  url "https://files.pythonhosted.org/packages/61/c9/22f5e6de03ec21357fd37e61fad2970043c406a9af217a0bfc68747148d8/bump_my_version-1.0.2.tar.gz"
+  sha256 "2f156877d2cdcda69afcb257ae4564c26e70f2fd5e5b15f2c7f26ab9e91502da"
   license "MIT"
   head "https://github.com/callowayproject/bump-my-version.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "7d10fdfe6bb9dd307f42a8f3699b3553aa773cca8904bea606f95f153ac837a2"
-    sha256 cellar: :any,                 arm64_sonoma:  "fd631865621335112981123c66ca2dcaf762b6b3555b544478c0f79613d28933"
-    sha256 cellar: :any,                 arm64_ventura: "cfa978d6f915782813c549fa918ac53ac3ee6c2e4201b5a4e13322243245b588"
-    sha256 cellar: :any,                 sonoma:        "ef3e7a34929088089ab8cea494a1ec4b04e2ac7add9edec1158065862626d443"
-    sha256 cellar: :any,                 ventura:       "9d74dae1d0d5135acd1d269034ed4b45f9fe48894e5c91dc1660ec7c437ecdab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "674343f10d21794c4ad710fe5f7fbf1a4bec36b64dd53ec266eaab4e8a08d17a"
+    sha256 cellar: :any,                 arm64_sequoia: "e652ed69a1cc68fe9c29afbb34745feab0365f0c26c557f2927f989c201eec4d"
+    sha256 cellar: :any,                 arm64_sonoma:  "70e636db551664379afd66c0294fd03612eda82668b1350b6cd44609b32cf835"
+    sha256 cellar: :any,                 arm64_ventura: "6687a9a7645fa5f12a54509ed19b9ab9f3c39300718963f05cd3b755a9d3904b"
+    sha256 cellar: :any,                 sonoma:        "4ea22746cc80bcf0949c06003ee3ae74b35d2e9f6b05edec641fd0ce61d31185"
+    sha256 cellar: :any,                 ventura:       "da3f02168ad8746786ab53e31cee48e73c9661966fb085a0629a45c817e365aa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8c6323c312d0e3b79bc0cc5fd94d02985215c5380b29e561fc38d3416cdddcc5"
   end
 
   depends_on "rust" => :build # for pydantic_core
@@ -91,8 +91,8 @@ class BumpMyVersion < Formula
   end
 
   resource "pydantic-settings" do
-    url "https://files.pythonhosted.org/packages/ca/a2/ad2511ede77bb424f3939e5148a56d968cdc6b1462620d24b2a1f4ab65b4/pydantic_settings-2.8.0.tar.gz"
-    sha256 "88e2ca28f6e68ea102c99c3c401d6c9078e68a5df600e97b43891c34e089500a"
+    url "https://files.pythonhosted.org/packages/88/82/c79424d7d8c29b994fb01d277da57b0a9b09cc03c3ff875f9bd8a86b2145/pydantic_settings-2.8.1.tar.gz"
+    sha256 "d5c663dfbe9db9d5e1c646b2e161da12f0d734d422ee56f567d0ea2cee4e8585"
   end
 
   resource "pygments" do

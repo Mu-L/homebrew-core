@@ -1,18 +1,18 @@
 class Neosync < Formula
   desc "CLI for interfacing with Neosync"
   homepage "https://www.neosync.dev/"
-  url "https://github.com/nucleuscloud/neosync/archive/refs/tags/v0.5.25.tar.gz"
-  sha256 "e6c1fae88500ad5ef9a3a62cd19f437d8fc40585180c7290605a32b69a1e1355"
+  url "https://github.com/nucleuscloud/neosync/archive/refs/tags/v0.5.27.tar.gz"
+  sha256 "c18b3c86eebef5a2627d0f761cd7d5f144464493a25ff7c5987e8576a32a8749"
   license "MIT"
   head "https://github.com/nucleuscloud/neosync.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "99ef3c50ab9203b95d07f4a47b133ba01ad833fab82134c5a21b01b97a48e0d1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "99ef3c50ab9203b95d07f4a47b133ba01ad833fab82134c5a21b01b97a48e0d1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "99ef3c50ab9203b95d07f4a47b133ba01ad833fab82134c5a21b01b97a48e0d1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a68206d182438d2552828ff1268b2d2d0531fb7e42d16d5ea95b818890c6e974"
-    sha256 cellar: :any_skip_relocation, ventura:       "a68206d182438d2552828ff1268b2d2d0531fb7e42d16d5ea95b818890c6e974"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e731e3263e74692ebb6b52f8dfebb9856183c92b9bd06c64c65827e15f73abeb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b74b766fd840f83477fb146f17459fb93b7be5aff808a931e115af4e2c6e84a8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b74b766fd840f83477fb146f17459fb93b7be5aff808a931e115af4e2c6e84a8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b74b766fd840f83477fb146f17459fb93b7be5aff808a931e115af4e2c6e84a8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d9694c8ac948f944318e3ccdd3d13aabb2c94169ee2a3be1bb9e6f1d7627b8dc"
+    sha256 cellar: :any_skip_relocation, ventura:       "d9694c8ac948f944318e3ccdd3d13aabb2c94169ee2a3be1bb9e6f1d7627b8dc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "caba9df0f9927ace9ed0e86cfebf08091c4f644505109825d1d25606b5b1591b"
   end
 
   depends_on "go" => :build

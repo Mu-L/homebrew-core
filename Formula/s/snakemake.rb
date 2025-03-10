@@ -3,18 +3,18 @@ class Snakemake < Formula
 
   desc "Pythonic workflow system"
   homepage "https://snakemake.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/64/bd/b97639e0290c7a2a276bd3ef8bfea8b9a204df3bf6e3d074e05758ed7403/snakemake-8.29.0.tar.gz"
-  sha256 "9f8648f95e27b7c44c4de23a38956840a047a59065a344cba06935a18559162f"
+  url "https://files.pythonhosted.org/packages/0f/80/1ce0232ef3249de78ff77219fd51a3dc75074cf3b27f02d15106b5a360bd/snakemake-8.29.3.tar.gz"
+  sha256 "a4d4ba959beec079c7430b0cbd47989cbcc2c8943ae74034b3db38a32329c1be"
   license "MIT"
   head "https://github.com/snakemake/snakemake.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "3449a0b46c379d0ba760bbff3548a16befe37622716c918ee7581abc6abac41f"
-    sha256 cellar: :any,                 arm64_sonoma:  "f6c2a2abee73c05683a6bc069ac648260720f61aea0026d1852f28a20a54623c"
-    sha256 cellar: :any,                 arm64_ventura: "1699b2c199931142fbab83c7ec667240c619f28913d79b44be1de6f0f89d49c0"
-    sha256 cellar: :any,                 sonoma:        "42a623f669141295b3d0efddb4bbd067236b53ee8fa85ac234d4b4d789b95eae"
-    sha256 cellar: :any,                 ventura:       "68a0f764662287fe6902ca2f12450095b686e399ce21b79f9c2a2ea1f16b14b1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1d87a69d62a86e63e57a7a69670400c927e825229a45e0ed75b9f81b58ab2da5"
+    sha256 cellar: :any,                 arm64_sequoia: "470c4c0c85ef1e6e0d56287cacdfa9fec812ced1cf60ec33a23117343e110758"
+    sha256 cellar: :any,                 arm64_sonoma:  "9e2f40536061561c7e536ad6e022484f30a155b4ffacec0b2697c987810bd6a4"
+    sha256 cellar: :any,                 arm64_ventura: "e68db4f1ac13ab388199a1666cbe8509d7c0631286a9b61f62daa5e6760a248b"
+    sha256 cellar: :any,                 sonoma:        "8164820cefc8713b0894295f802eefcdb156a7552d5c93910cf1510452dc110d"
+    sha256 cellar: :any,                 ventura:       "3443efac1df815536bc396dd31f822199be8fc89d32b69661fccf18fe2487810"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6eef610d4ea6e1af06db5368fc89123297a6349f8c84ab7c7abb69a19d97310f"
   end
 
   depends_on "rust" => :build
@@ -58,11 +58,6 @@ class Snakemake < Formula
     sha256 "bf429e7aef65921c69b4ed48f3d48d3eac1383b05d2df91884705842d974d0dc"
   end
 
-  resource "datrie" do
-    url "https://files.pythonhosted.org/packages/9d/fe/db74bd405d515f06657f11ad529878fd389576dca4812bea6f98d9b31574/datrie-0.8.2.tar.gz"
-    sha256 "525b08f638d5cf6115df6ccd818e5a01298cd230b2dac91c8ff2e6499d18765d"
-  end
-
   resource "docutils" do
     url "https://files.pythonhosted.org/packages/ae/ed/aefcc8cd0ba62a0560c3c18c33925362d46c6075480bfa4df87b28e169a9/docutils-0.21.2.tar.gz"
     sha256 "3a6b18732edf182daa3cd12775bbb338cf5691468f91eeeb109deff6ebfa986f"
@@ -104,8 +99,8 @@ class Snakemake < Formula
   end
 
   resource "jinja2" do
-    url "https://files.pythonhosted.org/packages/af/92/b3130cbbf5591acf9ade8708c365f3238046ac7cb8ccba6e81abccb0ccff/jinja2-3.1.5.tar.gz"
-    sha256 "8fefff8dc3034e27bb80d67c671eb8a9bc424c0ef4c0826edbff304cceff43bb"
+    url "https://files.pythonhosted.org/packages/df/bf/f7da0350254c0ed7c72f3e33cef02e048281fec7ecec5f032d4aac52226b/jinja2-3.1.6.tar.gz"
+    sha256 "0137fb05990d35f1275a587e9aee6d56da821fc83491a0fb838183be43f66d6d"
   end
 
   resource "jsonschema" do

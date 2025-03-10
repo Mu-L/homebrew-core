@@ -1,26 +1,23 @@
 class Sdl2Image < Formula
   desc "Library for loading images as SDL surfaces and textures"
   homepage "https://github.com/libsdl-org/SDL_image"
-  url "https://github.com/libsdl-org/SDL_image/releases/download/release-2.8.5/SDL2_image-2.8.5.tar.gz"
-  sha256 "8bc4c57f41e2c0db7f9b749b253ef6cecdc6f0b689ecbe36ee97b50115fff645"
+  url "https://github.com/libsdl-org/SDL_image/releases/download/release-2.8.8/SDL2_image-2.8.8.tar.gz"
+  sha256 "2213b56fdaff2220d0e38c8e420cbe1a83c87374190cba8c70af2156097ce30a"
   license "Zlib"
   head "https://github.com/libsdl-org/SDL_image.git", branch: "main"
 
-  # This formula uses a file from a GitHub release, so we check the latest
-  # release version instead of Git tags.
   livecheck do
     url :stable
-    regex(/release[._-]v?(2(?:\.\d+)+)/i)
-    strategy :github_releases
+    regex(/^(?:release[._-])?v?(2(?:\.\d+)+)$/i)
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d5ceac706b224ec99a5ef598e701e21458efd60bd696c1642e46d3d56787c859"
-    sha256 cellar: :any,                 arm64_sonoma:  "08d3d113697aa17bf1cff0ac358e8ab450c9be5eac7f3e18191ddaa687162a9e"
-    sha256 cellar: :any,                 arm64_ventura: "8dfeccc064ee7c4686b1b8533d619d9dfda6d7e255dd8cc167f4b3e0bafbb8c0"
-    sha256 cellar: :any,                 sonoma:        "7effd1e763e59b88d81784405a3064709492efea38f1d9775433ae41384e02f9"
-    sha256 cellar: :any,                 ventura:       "4a8eec5331da79a54fd4359ddc4ab88adbf0137e29c56fb190afaa3674302140"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c1c652e1fd5466f05cc18fbb460398246282475fc77e987421487478318f8f9e"
+    sha256 cellar: :any,                 arm64_sequoia: "ce895628c0e84843740799c0001d8097cc5bb424edb45f150ee10d33d9031288"
+    sha256 cellar: :any,                 arm64_sonoma:  "1655c170513f87b2bddc7cf740ff876d8dce6db804ca961ea94a5805aee6b495"
+    sha256 cellar: :any,                 arm64_ventura: "57d15c79fb8f64048038e6dfc079805751275bdfc83baa9d14cedd10ea9034b5"
+    sha256 cellar: :any,                 sonoma:        "5ced16f1eb8d4c522a1ad4e9fd3021f8441b517be78f9ccb5433815b069220c2"
+    sha256 cellar: :any,                 ventura:       "25a9eec92d2e56b6edcd10ddefd0bfba6cb2fab1c6ed775886e5c91092e8c8dd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "57196690a97f3513f2a57897c5ecd6972b3d162ec42a68960768dab89d76fbf0"
   end
 
   depends_on "autoconf" => :build

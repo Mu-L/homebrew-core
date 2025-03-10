@@ -1,8 +1,8 @@
 class Opencsg < Formula
   desc "Constructive solid geometry rendering library"
   homepage "https://www.opencsg.org/"
-  url "https://www.opencsg.org/OpenCSG-1.7.0.tar.gz"
-  sha256 "b892decc81a9e67c2c4d25c5399d576d8f77c3b0c05260606743243c86539df8"
+  url "https://www.opencsg.org/OpenCSG-1.8.1.tar.gz"
+  sha256 "afcc004a89ed3bc478a9e4ba39b20f3d589b24e23e275b7383f91a590d4d57c5"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,24 +11,27 @@ class Opencsg < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:  "2d11f1ed5484d470c5c4b778f5a701ceeeb25824974a37b64042e82468e247a0"
-    sha256 cellar: :any,                 arm64_ventura: "12506871013066efe79df98003d9ea88f3e062ce41fd50050d3cb8a9f97b1824"
-    sha256 cellar: :any,                 sonoma:        "4d6b69483e82838a5e113cd9808e32276e2d0434b40b4a7c790576ffa1328737"
-    sha256 cellar: :any,                 ventura:       "9057d05b831616e9b8fe6a74c6aa018a6a9481dd8b888773241f06aefe49b882"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b37ea3b9c6749f57cf8b91102f334a161b707a27e9c5d4f939ea946b445207e0"
+    sha256 cellar: :any,                 arm64_sequoia: "f92caa541b802161c2c60e745a49574ba379dcd40492dfb2cc9c4e123c89920d"
+    sha256 cellar: :any,                 arm64_sonoma:  "07b56281fbb460cadee1c2117d80a52d3967069363af998d99c7f2dc46ef1891"
+    sha256 cellar: :any,                 arm64_ventura: "e7ca2f7b0365b03aeea72adc6e87c80d8153f07bef3108fdc56eaab0682ad6c1"
+    sha256 cellar: :any,                 sonoma:        "89f9db42762d2ab1958e8bd5654c4f46644a1a831e1966f3581932925ea2212a"
+    sha256 cellar: :any,                 ventura:       "2c2c3b7ba27e8ee0190776fa0f35729e4bf0d27bb7d581e56f3cdf62d1d95fc4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d6dc9589d54eb362645b8563f62c66b5e29bd44c50c0c4c483db011b3aac5ee5"
   end
 
-  depends_on "qt" => :build
+  depends_on "cmake" => :build
   depends_on "glew"
 
-  def install
-    # Disable building examples
-    inreplace "opencsg.pro", "src example", "src"
+  # glew linkage patch, upstream pr ref, https://github.com/floriankirsch/OpenCSG/pull/16
+  patch do
+    url "https://github.com/floriankirsch/OpenCSG/commit/881a41b52ebee60fb3f4511cd63813b06e8e05c1.patch?full_index=1"
+    sha256 "97e56d7a8bf01d153bce8b5685b0f06eb2befdefa07bb644a12dc79e4143f9ab"
+  end
 
-    system "qmake", "-r", "INSTALLDIR=#{prefix}",
-                          "INCLUDEPATH+=#{Formula["glew"].opt_include}",
-                          "LIBS+=-L#{Formula["glew"].opt_lib} -lGLEW"
-    system "make", "install"
+  def install
+    system "cmake", "-S", ".", "-B", "build", "-DBUILD_EXAMPLE=OFF", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do

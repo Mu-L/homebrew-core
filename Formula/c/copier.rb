@@ -3,17 +3,17 @@ class Copier < Formula
 
   desc "Utility for rendering projects templates"
   homepage "https://copier.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/44/49/1a43fade92e3af317393943ac005ed1b4094a88e999acda34f3d0e27aef8/copier-9.5.0.tar.gz"
-  sha256 "db7311075176376ee746fe610ffb5b27db7ac755585d6149894f677ffbce127d"
+  url "https://files.pythonhosted.org/packages/d2/a2/b8919c3c3fe31ccfae6a16bbef0279396c0f9d4fb49dfd333ab4cc92bdb6/copier-9.6.0.tar.gz"
+  sha256 "e05a18b387b96e8d1fbd5271d37f59c9a02be5ad717f7878d0505562fd62b786"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "29893a8ca4dd0637eed1bcf1bc9fdf0b4d7f0a07feb9c26842c34497cb72a264"
-    sha256 cellar: :any,                 arm64_sonoma:  "adba93becb3d6f3a47cb52e3df6e8956525811f6aac0a8ea7f25604e3095cca1"
-    sha256 cellar: :any,                 arm64_ventura: "25effab23c81268f27f63c3c5b8d183832e03319abe473bcb5dc72b0a1941598"
-    sha256 cellar: :any,                 sonoma:        "05c7fb5e2685e536df70c80be8870fb759994095e32b42af742a1993dd64c14a"
-    sha256 cellar: :any,                 ventura:       "8cb7d4d186aaf5b2e4d12d331c4121e406328dc550c3f6ac3726a8c1198b126e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e2d8cb35b4586d1cbeb6f392111ef1e77d59fc9b84682aa624ef47a5b85f82ae"
+    sha256 cellar: :any,                 arm64_sequoia: "50a5c78e37bb9d803124a05195f63a7c61180fbaf2888f312934f8a32293310a"
+    sha256 cellar: :any,                 arm64_sonoma:  "3dd8e6644a90bc7fb354fdb550dccecae8dbb9ffffe4a7c597641feb03996d9f"
+    sha256 cellar: :any,                 arm64_ventura: "2a2684ade12925237b02dcf4285ffed5c4fa41b5f04078e6bf0cc5d6c4de71bc"
+    sha256 cellar: :any,                 sonoma:        "a735c114de80d9be684ab01bcde80deb20232fc54860e2457112b96729e9f844"
+    sha256 cellar: :any,                 ventura:       "9886f01dad72ceb21ae7c3d4169022eb1cf3befbe11136d3970322cce19ac104"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6da3c005386a2811c74a06fca8a2a879aac0bcf2ec41f3a6a6136340dc7db6e7"
   end
 
   depends_on "rust" => :build
@@ -41,8 +41,8 @@ class Copier < Formula
   end
 
   resource "jinja2" do
-    url "https://files.pythonhosted.org/packages/af/92/b3130cbbf5591acf9ade8708c365f3238046ac7cb8ccba6e81abccb0ccff/jinja2-3.1.5.tar.gz"
-    sha256 "8fefff8dc3034e27bb80d67c671eb8a9bc424c0ef4c0826edbff304cceff43bb"
+    url "https://files.pythonhosted.org/packages/df/bf/f7da0350254c0ed7c72f3e33cef02e048281fec7ecec5f032d4aac52226b/jinja2-3.1.6.tar.gz"
+    sha256 "0137fb05990d35f1275a587e9aee6d56da821fc83491a0fb838183be43f66d6d"
   end
 
   resource "jinja2-ansible-filters" do

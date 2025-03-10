@@ -3,17 +3,18 @@ class Moto < Formula
 
   desc "Mock AWS services"
   homepage "http://getmoto.org/"
-  url "https://files.pythonhosted.org/packages/df/fc/629a225bf615ed5e787aa36ef3c395ed9c702e6c14b51ee5bf174c5d7dd9/moto-5.1.0.tar.gz"
-  sha256 "879274a9d2213ca49706e3c8ea380d90953ec1ec642976f6315255394d36edc0"
+  url "https://files.pythonhosted.org/packages/ee/ee/88b514190cb4ece02b377ea61ff26b596fa967609c82aa2f2856bfae2f3e/moto-5.1.1.tar.gz"
+  sha256 "5b25dbc62cccd9f36ef062c870db49d976b241129024fab049e2d3d1296e2a57"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "9a0d982d41365f2e78d27e3b1bb05dc554d0467268a1325a84192299bc5d410f"
-    sha256 cellar: :any,                 arm64_sonoma:  "86fe8e2e079473e063f3e93eb97d2a36081269b410f85f0952d7fb0f819fd54a"
-    sha256 cellar: :any,                 arm64_ventura: "702d632995b01b50e84fee212265a6b175d78371faf127e755e610d1dde1d5c7"
-    sha256 cellar: :any,                 sonoma:        "38e1fbaf76c2591674b410477f63754aaf756970249c5883201d8ceb48de6326"
-    sha256 cellar: :any,                 ventura:       "ebdcef59a7f16414ab2c4f8d8b8407b92446391f16ce1b9d761598e336729785"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b3854456a855efa8f8c2b30efa7039e44898bc87647f6183bd65591dc96b96ff"
+    sha256 cellar: :any,                 arm64_sequoia: "e5891bdefeda44b57885f842e9de9b59491a18a60f5c6f9e85b9a615c8a2c4e7"
+    sha256 cellar: :any,                 arm64_sonoma:  "f3b1e3ae8d6b68f14855df74659e8373781995801930e3d2b2ec72786fd07c57"
+    sha256 cellar: :any,                 arm64_ventura: "ff8ba8e3459bec8d5976a383fe0dfb092c309de6203cb5d6bd11fc7d1e467724"
+    sha256 cellar: :any,                 sonoma:        "09d438b6c0459867c5c8a577b783f23e56811628b013b344d8bebc4013bc1341"
+    sha256 cellar: :any,                 ventura:       "eadbd28ebf3deffaff423ed3ee0ad4a3ac6ec4d79db3e1a71ed4f9e2a2042363"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1c31869d6c17c8e0dae7becfff48a61d986d95db14f23ca05c82abe3b5bc5741"
   end
 
   depends_on "rust" => :build # for pydantic_core
@@ -53,18 +54,18 @@ class Moto < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/79/af/2082fde2cbd81f8b60fd46e3ac07a0f841abfdb9818b818d560e42b5c444/boto3-1.36.26.tar.gz"
-    sha256 "523b69457eee55ac15aa707c0e768b2a45ca1521f95b2442931090633ec72458"
+    url "https://files.pythonhosted.org/packages/6b/e6/40f8c1fb52c02adad1c104c4c4ac0488bf8f2b1397f24db07779322e420b/boto3-1.37.7.tar.gz"
+    sha256 "ac2e022edcd6a94a2adbb21f0ad373a16557ec14a8910366bee0bbc7138fc72a"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/69/db/caa8778cf98ecbe0ad0efd7fbf673e2d036373386582e15dffff80bf16e1/botocore-1.36.26.tar.gz"
-    sha256 "4a63bcef7ecf6146fd3a61dc4f9b33b7473b49bdaf1770e9aaca6eee0c9eab62"
+    url "https://files.pythonhosted.org/packages/53/4b/096b2fac3ba92ace94f69f238eea9948af568b487c3898e9a8881bfe506b/botocore-1.37.7.tar.gz"
+    sha256 "2faeac11766db912bc444669b04359080b7b83b2f57a3906c77c8105b70ce1e8"
   end
 
   resource "cfn-lint" do
-    url "https://files.pythonhosted.org/packages/4d/c0/a36a1bdc6ba1fd4a7e5f48cd23a1802ccaf745ffb5c79e3fdf800eb5ae90/cfn_lint-1.25.1.tar.gz"
-    sha256 "717012566c6034ffa7e60fcf1b350804d093ee37589a1e91a1fd867f33a930b7"
+    url "https://files.pythonhosted.org/packages/90/4c/42104d719310625c2decf4a6a8c6040cb1e9dd2160fca0dbf666b60f89bf/cfn_lint-1.28.0.tar.gz"
+    sha256 "5ba44c441d69dcf8f78cd0b5ebe4a6fcd55c0073d2d21af62e4201825b175c2a"
   end
 
   resource "charset-normalizer" do
@@ -88,8 +89,8 @@ class Moto < Formula
   end
 
   resource "flask-cors" do
-    url "https://files.pythonhosted.org/packages/4f/d0/d9e52b154e603b0faccc0b7c2ad36a764d8755ef4036acbf1582a67fb86b/flask_cors-5.0.0.tar.gz"
-    sha256 "5aadb4b950c4e93745034594d9f3ea6591f734bb3662e16e255ffbf5e89c88ef"
+    url "https://files.pythonhosted.org/packages/32/d8/667bd90d1ee41c96e938bafe81052494e70b7abd9498c4a0215c103b9667/flask_cors-5.0.1.tar.gz"
+    sha256 "6ccb38d16d6b72bbc156c1c3f192bc435bfcc3c2bc864b2df1eb9b2d97b2403c"
   end
 
   resource "graphql-core" do
@@ -108,8 +109,8 @@ class Moto < Formula
   end
 
   resource "jinja2" do
-    url "https://files.pythonhosted.org/packages/af/92/b3130cbbf5591acf9ade8708c365f3238046ac7cb8ccba6e81abccb0ccff/jinja2-3.1.5.tar.gz"
-    sha256 "8fefff8dc3034e27bb80d67c671eb8a9bc424c0ef4c0826edbff304cceff43bb"
+    url "https://files.pythonhosted.org/packages/df/bf/f7da0350254c0ed7c72f3e33cef02e048281fec7ecec5f032d4aac52226b/jinja2-3.1.6.tar.gz"
+    sha256 "0137fb05990d35f1275a587e9aee6d56da821fc83491a0fb838183be43f66d6d"
   end
 
   resource "jmespath" do
@@ -118,8 +119,8 @@ class Moto < Formula
   end
 
   resource "joserfc" do
-    url "https://files.pythonhosted.org/packages/36/ba/b78bde8ccd9c77d514300a2ae7751f7f44a6dcb7e598ebc4053c64b02caa/joserfc-1.0.3.tar.gz"
-    sha256 "bcbed6fdfeefb9dc3bcca827f7539c57b353d514fbddf6c722a1c35aea4eb499"
+    url "https://files.pythonhosted.org/packages/6a/e4/4c649e364bafa7cd2dd44ab5c301a721d3ff4942c43feb562deded60b414/joserfc-1.0.4.tar.gz"
+    sha256 "dc3fc216cfcfc952d4c0d4b06c759a04711af0b667e5973adc47dbb1ba784127"
   end
 
   resource "jsonpatch" do
@@ -258,13 +259,13 @@ class Moto < Formula
   end
 
   resource "s3transfer" do
-    url "https://files.pythonhosted.org/packages/62/45/2323b5928f86fd29f9afdcef4659f68fa73eaa5356912b774227f5cf46b5/s3transfer-0.11.2.tar.gz"
-    sha256 "3b39185cb72f5acc77db1a58b6e25b977f28d20496b6e58d6813d75f464d632f"
+    url "https://files.pythonhosted.org/packages/0f/ec/aa1a215e5c126fe5decbee2e107468f51d9ce190b9763cb649f76bb45938/s3transfer-0.11.4.tar.gz"
+    sha256 "559f161658e1cf0a911f45940552c696735f5c74e64362e515f333ebed87d679"
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/92/ec/089608b791d210aec4e7f97488e67ab0d33add3efccb83a056cbafe3a2a6/setuptools-75.8.0.tar.gz"
-    sha256 "c5afc8f407c626b8313a86e10311dd3f661c6cd9c09d4bf8c15c0e11f9f2b0e6"
+    url "https://files.pythonhosted.org/packages/d1/53/43d99d7687e8cdef5ab5f9ec5eaf2c0423c2b35133a2b7e7bc276fc32b21/setuptools-75.8.2.tar.gz"
+    sha256 "4880473a969e5f23f2a2be3646b2dfd84af9028716d398e46192f84bc36900d2"
   end
 
   resource "six" do

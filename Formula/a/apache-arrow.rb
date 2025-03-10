@@ -1,20 +1,20 @@
 class ApacheArrow < Formula
   desc "Columnar in-memory analytics layer designed to accelerate big data"
   homepage "https://arrow.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=arrow/arrow-19.0.0/apache-arrow-19.0.0.tar.gz"
-  mirror "https://archive.apache.org/dist/arrow/arrow-19.0.0/apache-arrow-19.0.0.tar.gz"
-  sha256 "f89b93f39954740f7184735ff1e1d3b5be2640396febc872c4955274a011f56b"
+  url "https://www.apache.org/dyn/closer.lua?path=arrow/arrow-19.0.1/apache-arrow-19.0.1.tar.gz"
+  mirror "https://archive.apache.org/dist/arrow/arrow-19.0.1/apache-arrow-19.0.1.tar.gz"
+  sha256 "acb76266e8b0c2fbb7eb15d542fbb462a73b3fd1e32b80fad6c2fafd95a51160"
   license "Apache-2.0"
   revision 1
   head "https://github.com/apache/arrow.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a6c9c00a48857deb74c1d00bbf7858466307853629866e9500fe57dc5889eb58"
-    sha256 cellar: :any,                 arm64_sonoma:  "d1b3aa26f91c7c452a60dca1b590c54b0026a5ee05a9c148782946c66d878c6e"
-    sha256 cellar: :any,                 arm64_ventura: "5d71a8bd28fd50e5bf190c3764e5cf1367d2c6ee45fc0b3850da6f178cb0d5eb"
-    sha256 cellar: :any,                 sonoma:        "45a9742c35214fd74301c6261a5f137e43b5e4be2c0b1281567e5699d35f46a9"
-    sha256 cellar: :any,                 ventura:       "bac30f19cf4bb0ed2c444a782152b8458ebcdfd3602e0f7f70457e4b0faf9396"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4699146750ca07631a98168da1b237315363dbaa0dd4fae8f4ad29044e724545"
+    sha256 cellar: :any,                 arm64_sequoia: "dd5fc4a9adf55a6b87e0b0210e1bb32955d2d73e6a6262813f3c9589fe49f13a"
+    sha256 cellar: :any,                 arm64_sonoma:  "44f76218ec58d3b616ab343a1dc0731a2f730a56db13379d64c649a80657e43f"
+    sha256 cellar: :any,                 arm64_ventura: "cb9e1037a0bac95de9ee1b137465be60ee959e88f1d2095a0682ab155563fde5"
+    sha256 cellar: :any,                 sonoma:        "6b5b4c3cb3dcbfbd8c30731fbdc8106023e7a07be5c8833b7c9a4dadd7b7bb5b"
+    sha256 cellar: :any,                 ventura:       "db81fd0ceb86a75f5b7bb406c6e432bc9738f40e622870487a494e4f5ea55957"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ae828c3e15e18c2ca32d5c625d1d24ead07b7215ed10a877fd8d42b879bea12"
   end
 
   depends_on "boost" => :build
