@@ -20,6 +20,7 @@ class Pixi < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "ff1b06ee469fb9d6e12b3adf57152574059da8c0e331c4d70a1836a1d3936c01"
     sha256 cellar: :any_skip_relocation, sonoma:        "0b3eeedff7b4db0e6bc6da42136843fcb36afcbba2523946d4bc77cca6ab3ab1"
     sha256 cellar: :any_skip_relocation, ventura:       "e407621c538c1e8e2baa84995c9e46e39f0a4496f2449a26b92a8facb788d4dc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a9713eef96f56b756e15cdb53ebd12e50f9a41ae6a2fd5d207e8d2f05e1c2366"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7582a173795801c52a792a91b0682a403818ea8b9be9b6cc74d30cc812992bdb"
   end
 

@@ -1,18 +1,19 @@
 class Hk < Formula
   desc "Git hook and pre-commit lint manager"
   homepage "https://hk.jdx.dev"
-  url "https://github.com/jdx/hk/archive/refs/tags/v0.5.1.tar.gz"
-  sha256 "a4080e2233380b44b9a7b4a1334a8f6d2c602c37d09bb24d39b2db70837c10a0"
+  url "https://github.com/jdx/hk/archive/refs/tags/v0.6.1.tar.gz"
+  sha256 "95d60d6c97ed37618f51eee7891f60c3fbda47645a9244d8d6aeffa1ac578b25"
   license "MIT"
   head "https://github.com/jdx/hk.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "5388b819475365134c2b719a3e5372d320c89911f9e6b6085d5d768a2855d92f"
-    sha256 cellar: :any,                 arm64_sonoma:  "de43469d68c5994677125b30ddf9fae7d545b3e1d80996b3ec92ac20ce9400e7"
-    sha256 cellar: :any,                 arm64_ventura: "02a29fc377acc21058957ca46b96c65e4485e9dff90aa41d35efb02790f04e2c"
-    sha256 cellar: :any,                 sonoma:        "c84d188d22f12c38ced9861847b5e454ae13402da8020f326d2a575ff13965a8"
-    sha256 cellar: :any,                 ventura:       "5bac03aff75048326cc5e64a7e694529145680c13577dd5aee9359d5d79a6f43"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5382f98615da27e65f14708d87332d05e6bfbc86510aa4eee077d1b93f1ed9b7"
+    sha256 cellar: :any,                 arm64_sequoia: "aedba5e7fd3fc6a617d1224f35b406b85dfeb23f38b530c6dabcbe61b02fa361"
+    sha256 cellar: :any,                 arm64_sonoma:  "58402d2fa775c81e61e53e2eda20ff2d7011084fa7f0b3b1e494e68f48f5c870"
+    sha256 cellar: :any,                 arm64_ventura: "330a0df96ae33f7043124443fb3e706f5f39dc5803f0cd8671bbe2558fed99da"
+    sha256 cellar: :any,                 sonoma:        "a08e8dcd0b98b982d90a036b6c5edc3adf6e05631ed9280c54e95587f7598ec3"
+    sha256 cellar: :any,                 ventura:       "479ff1ec13cf7dd6edf74120c57a4f06df5f5af9ce9d4b59012cd1bc56a408b1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2efc2be806718ea3cb05b60d78f335c1b72f4b9cb96b5798deaf84c2590108bd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd6bcc8e2b323304be3bdc96644539a17e31a648e59402b44cc6c797c59df196"
   end
 
   depends_on "rust" => [:build, :test]

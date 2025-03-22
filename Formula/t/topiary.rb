@@ -11,6 +11,7 @@ class Topiary < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "079b20943df3e5b1249e5284b45b68428ff72395588f11752431971096733d4a"
     sha256 cellar: :any_skip_relocation, sonoma:        "456c3f5f7f5d89543b0031c66a03aefea0e92200153e6f35c1707da99d0fbbfc"
     sha256 cellar: :any_skip_relocation, ventura:       "f90b9b49e3bcb191a13a7875d74c162e0d2e9068d8951a8b9482a9201ee8dfdb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "464120b0a9d2820bc675d360474be410021f25dce2c9b385c397773f10f738a1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b2b83fc86ee8cd29d1109c005d7eb76e90a0807f404085b2d194e5131ff65880"
   end
 

@@ -17,6 +17,7 @@ class Entr < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "badd684160fe6618cae3938877a687d10951cea937fb4ed9dffb2c121a20317e"
     sha256 cellar: :any_skip_relocation, sonoma:        "bf673e248b9ecff9457c892d56142fe10bd6dc4136929105e65a5fc081b11b2f"
     sha256 cellar: :any_skip_relocation, ventura:       "79f31d0171888953a7dca0685b335eec0983ef12a473458f81be0a07d10a2108"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f6a4062b80d77c0c7ea22591b2bea9496842c92b989b435554225a3c16f7d827"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5e44cb7f98f576a76445eaaf449da0b730302b127e072f7ddfd6e01c85a3fef7"
   end
 

@@ -11,6 +11,7 @@ class Fselect < Formula
     sha256 cellar: :any,                 arm64_ventura: "2682b67ecc4b1e8e4538d8b0bd31f2366b8bae94f0437ec490b7a19c98ecae40"
     sha256 cellar: :any,                 sonoma:        "231220fc27238b4907c2a10f6b54ed88e17ea90fbef02155afb63df4db65ab2d"
     sha256 cellar: :any,                 ventura:       "c0f9db29c0a746141e6d277177ca34ef4fe76356f1f90f901161d64632be0ae6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c23eede3272e9b289fd34eb55fa3f644202738b7d08713906df4f39bf7bbfc8a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "50b366606b5f2fa65586fb2d6c29c38c91d894fd50d910c75c84135fcc3d891c"
   end
 

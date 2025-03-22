@@ -12,6 +12,7 @@ class Basedpyright < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "12d58ccd9503ab6bc44a02dcf594a628e3e4e90f2e8d20ccee370dd74d9f18c9"
     sha256 cellar: :any_skip_relocation, sonoma:        "7801cbdf6869802768945c0640d4439f9b4287ed792f32cb07069875ed5baaf4"
     sha256 cellar: :any_skip_relocation, ventura:       "7801cbdf6869802768945c0640d4439f9b4287ed792f32cb07069875ed5baaf4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "12d58ccd9503ab6bc44a02dcf594a628e3e4e90f2e8d20ccee370dd74d9f18c9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "12d58ccd9503ab6bc44a02dcf594a628e3e4e90f2e8d20ccee370dd74d9f18c9"
   end
 

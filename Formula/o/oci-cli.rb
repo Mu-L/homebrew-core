@@ -14,6 +14,7 @@ class OciCli < Formula
     sha256 cellar: :any,                 arm64_ventura: "8e08d2c10ae6b221b713ec0b6b93237b65de6cf9436cf892fb16fb4a2354d6db"
     sha256 cellar: :any,                 sonoma:        "5c33e787f1cdc6ee8cab592f3d56ffebc9533d2806b0ab0f6320557f6478e0b3"
     sha256 cellar: :any,                 ventura:       "581eec0f5dcb814635eefd6efe5bae587f5e04914c47a02e6564158c257b1f1e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f5d93df93db76191fad145c3d61f422204fed4c4368d042f921ddaaff76c7b36"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "831d28316912e4732230a77b5a61c128b1bc36c4df309f390615a2d21a0a4604"
   end
 

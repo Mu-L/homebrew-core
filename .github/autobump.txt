@@ -711,6 +711,7 @@ dar
 darcs
 darkhttpd
 darkice
+darklua
 darkstat
 dart-sdk
 dartsim
@@ -978,6 +979,7 @@ faad2
 faas-cli
 fabio
 fabric
+fabric-ai
 fabric-installer
 facad
 fail2ban
@@ -2775,6 +2777,7 @@ proteinortho
 proto
 protobuf
 protobuf-c
+protobuf@29
 protoc-gen-go
 protoc-gen-go-grpc
 protoc-gen-grpc-java

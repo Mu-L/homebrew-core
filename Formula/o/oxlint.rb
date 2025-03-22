@@ -17,6 +17,7 @@ class Oxlint < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "3baa0e3de9129700cb386b28ddea6e48a387b263a83e10f649278d780d58708c"
     sha256 cellar: :any_skip_relocation, sonoma:        "c1bb396282f2fa3ea692b083478b4aaff6e63f86ea8a552bb30da718558ccf0f"
     sha256 cellar: :any_skip_relocation, ventura:       "0ec8608caf8d624299fea60d294551a38bbe855e2634c4f394c53d59dc8d751d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2bee3562d49494fa12f24b651d0cb4157d0f44975f0b8215a2d57a65b6f0bfbf"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b934bf4cff82f2580c93aab3639adbfa52208e6ab21aa403d7e0a12c93aa3c79"
   end
 
