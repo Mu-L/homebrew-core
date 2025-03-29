@@ -70,6 +70,7 @@ ansible-creator
 ansible-lint
 ansible@10
 ansifilter
+ansilove
 ant
 antidote
 antlr
@@ -594,6 +595,7 @@ colmap
 commandbox
 commitizen
 commitlint
+compiledb
 composer
 comrak
 comtrya
@@ -711,6 +713,7 @@ dar
 darcs
 darkhttpd
 darkice
+darklua
 darkstat
 dart-sdk
 dartsim
@@ -972,12 +975,14 @@ exploitdb
 exult
 eza
 f2
+f3
 f3d
 faac
 faad2
 faas-cli
 fabio
 fabric
+fabric-ai
 fabric-installer
 facad
 fail2ban
@@ -1136,6 +1141,7 @@ g-ls
 g2o
 gabo
 gallery-dl
+gama
 gambit
 game-music-emu
 gammaray
@@ -1160,6 +1166,7 @@ gdbm
 gdcm
 gdk-pixbuf
 gdu
+geesefs
 geeqie
 gegl
 genact
@@ -1216,6 +1223,7 @@ git-split-diffs
 git-subrepo
 git-sync
 git-town
+git-who
 git-xargs
 gitbackup
 gitbucket
@@ -1501,6 +1509,7 @@ i2util
 iamb
 iamy
 ibazel
+icann-rdap
 icbirc
 icloudpd
 icon
@@ -1796,6 +1805,7 @@ leakcanary-shark
 lean-cli
 leapp-cli
 leetcode-cli
+leetgo
 leetup
 legba
 legitify
@@ -1839,6 +1849,7 @@ libdap
 libdeflate
 libdex
 libdivide
+libdmtx
 libdnet
 libdom
 libdpp
@@ -1992,6 +2003,7 @@ libunistring
 libunwind
 libupnp
 liburing
+libusb
 libusbmuxd
 libuv
 libva
@@ -2361,6 +2373,7 @@ nest
 nestopia-ue
 netaddr
 netcdf
+netcdf-fortran
 netfetch
 nethogs
 netlify-cli
@@ -2775,6 +2788,7 @@ proteinortho
 proto
 protobuf
 protobuf-c
+protobuf@29
 protoc-gen-go
 protoc-gen-go-grpc
 protoc-gen-grpc-java
@@ -3214,7 +3228,6 @@ sollya
 solr
 solr@8.11
 sonar-scanner
-sonarqube
 sonic
 sonobuoy
 sophus
@@ -3377,6 +3390,7 @@ tanka
 taplo
 tarantool
 tarlz
+tarsnap
 tartufo
 task
 taskopen
@@ -3563,6 +3577,7 @@ uftrace
 ugit
 ugrep
 uhd
+umka-lang
 unar
 unbound
 uncover
@@ -3575,6 +3590,7 @@ unicorn
 unison
 unisonlang
 universal-ctags
+unshield
 unxip
 uptimed
 urdfdom

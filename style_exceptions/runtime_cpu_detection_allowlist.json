@@ -3,6 +3,7 @@
   "aom",
   "blis",
   "botan",
+  "coreutils",
   "fftw",
   "handbrake",
   "highway",

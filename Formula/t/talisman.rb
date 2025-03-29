@@ -1,8 +1,8 @@
 class Talisman < Formula
   desc "Tool to detect and prevent secrets from getting checked in"
   homepage "https://thoughtworks.github.io/talisman/"
-  url "https://github.com/thoughtworks/talisman/archive/refs/tags/v1.32.2.tar.gz"
-  sha256 "8403ba91b46449e782e05ba7377188909828224daa48a6afef9d883d8d9a6431"
+  url "https://github.com/thoughtworks/talisman/archive/refs/tags/v1.33.1.tar.gz"
+  sha256 "97a5c244a6ba2d91e3b1712de380572371323bdcb2087a702f961a0ff2eb0b5b"
   license "MIT"
   version_scheme 1
   head "https://github.com/thoughtworks/talisman.git", branch: "master"
@@ -13,12 +13,12 @@ class Talisman < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "994b7fb7ab0e732f85a7900ba5a27e69d0355fc851f48b6f7156d25d5c19859c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "994b7fb7ab0e732f85a7900ba5a27e69d0355fc851f48b6f7156d25d5c19859c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "994b7fb7ab0e732f85a7900ba5a27e69d0355fc851f48b6f7156d25d5c19859c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "296165bf33326ebe9c644c057d071932915d6b21174cdbf142062487a1e49507"
-    sha256 cellar: :any_skip_relocation, ventura:       "296165bf33326ebe9c644c057d071932915d6b21174cdbf142062487a1e49507"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "da00be79e46fd5ed3eedcf83f655395dc1ea5a4fdafaf8318e6551249f947941"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bebb205984b4e6afb18f7aaa0891ba9082756c488a3b0b9c976834e86fd3387a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bebb205984b4e6afb18f7aaa0891ba9082756c488a3b0b9c976834e86fd3387a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "bebb205984b4e6afb18f7aaa0891ba9082756c488a3b0b9c976834e86fd3387a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ee1ef464ee611111a2d611bded029f1fe7540da4558286e3068182e692a64dd4"
+    sha256 cellar: :any_skip_relocation, ventura:       "ee1ef464ee611111a2d611bded029f1fe7540da4558286e3068182e692a64dd4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "995f49826e2e2ba4acbec116d4572b0ab40d91909d8511a56c30b2b5d5cc3c4e"
   end
 
   depends_on "go" => :build

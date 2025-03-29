@@ -350,6 +350,9 @@
   "gallery-dl": {
     "exclude_packages": ["certifi"]
   },
+  "gamdl": {
+    "exclude_packages": ["certifi", "pillow"]
+  },
   "gcalcli": {
     "exclude_packages": ["certifi"]
   },
@@ -413,6 +416,10 @@
   },
   "gsan": {
     "exclude_packages": ["cryptography"]
+  },
+  "gtk-doc": {
+    "package_name": "",
+    "extra_packages": ["lxml", "pygments"]
   },
   "gyb": {
     "package_name": "",
