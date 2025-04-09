@@ -45,8 +45,12 @@ class Dynomite < Formula
       ENV.append_to_cflags "-Wno-implicit-function-declaration -Wno-int-conversion"
     end
 
+    args = ["--disable-silent-rules", "--sysconfdir=#{pkgetc}"]
+    # Help old config script for bundled libyaml identify arm64 linux
+    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+
     system "autoreconf", "--force", "--install", "--verbose"
-    system "./configure", "--disable-silent-rules", "--sysconfdir=#{pkgetc}", *std_configure_args
+    system "./configure", *args, *std_configure_args
     system "make"
     system "make", "install"
     pkgetc.install Dir["conf/*"]
@@ -64,7 +68,7 @@ class Dynomite < Formula
     end
 
     fork { exec sbin/"dynomite", "-c", "redis_single.yml" }
-    sleep 1
+    sleep 5
     assert_match "OK", shell_output("curl -s 127.0.0.1:#{stats_port}")
   end
 end

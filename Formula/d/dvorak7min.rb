@@ -30,6 +30,14 @@ class Dvorak7min < Formula
 
   uses_from_macos "ncurses"
 
+  # Apply Debian patch to fix build
+  patch do
+    on_linux do
+      url "https://salsa.debian.org/debian/dvorak7min/-/raw/56019daffd5c0628ef5b8ae200a69ba43263d7d6/debian/patches/debian-changes.patch"
+      sha256 "05303478d7006e376325db9d3ea00551acb0e6113e0d7e436f96df8d6f339e2e"
+    end
+  end
+
   def install
     # Remove pre-built ELF binary first
     system "make", "clean"
