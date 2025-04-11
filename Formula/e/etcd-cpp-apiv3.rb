@@ -51,6 +51,7 @@ class EtcdCppApiv3 < Formula
     system "cmake", "-S", ".", "-B", "build",
                     "-DCMAKE_CXX_STANDARD=17",
                     "-DCMAKE_CXX_STANDARD_REQUIRED=TRUE",
+                    "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
                     "-DBUILD_ETCD_TESTS=OFF",
                     "-DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}",
                     *std_cmake_args
@@ -74,7 +75,7 @@ class EtcdCppApiv3 < Formula
     CPP
 
     (testpath/"CMakeLists.txt").write <<~CMAKE
-      cmake_minimum_required(VERSION 3.5)
+      cmake_minimum_required(VERSION 4.0)
       set(CMAKE_CXX_STANDARD 17)
       project(test LANGUAGES CXX)
       find_package(protobuf CONFIG REQUIRED)
@@ -83,7 +84,6 @@ class EtcdCppApiv3 < Formula
       target_link_libraries(test_etcd_cpp_apiv3 PRIVATE etcd-cpp-api)
     CMAKE
 
-    ENV.append_path "CMAKE_PREFIX_PATH", Formula["boost@1.85"].opt_prefix
     ENV.delete "CPATH"
 
     args = %W[

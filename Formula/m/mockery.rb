@@ -1,10 +1,10 @@
 class Mockery < Formula
   desc "Mock code autogenerator for Golang"
   homepage "https://github.com/vektra/mockery"
-  url "https://github.com/vektra/mockery/archive/refs/tags/v2.53.3.tar.gz"
-  sha256 "c9495d19de1ca52a61a9ed299d9988a4f4a3cf1ad614954a15ca3920d8b852a2"
+  url "https://github.com/vektra/mockery/archive/refs/tags/v3.0.2.tar.gz"
+  sha256 "64cdd33987aaf091e735afcddbf4fe1bb848ef977c664e27ecde9c015a665602"
   license "BSD-3-Clause"
-  head "https://github.com/vektra/mockery.git", branch: "master"
+  head "https://github.com/vektra/mockery.git", branch: "v3"
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created, so we check the "latest" release instead
@@ -15,28 +15,32 @@ class Mockery < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0ffd0607ba8cc90b53782de55f91a711714fbc4e6f7631dbe83fba22c3aa1899"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0ffd0607ba8cc90b53782de55f91a711714fbc4e6f7631dbe83fba22c3aa1899"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0ffd0607ba8cc90b53782de55f91a711714fbc4e6f7631dbe83fba22c3aa1899"
-    sha256 cellar: :any_skip_relocation, sonoma:        "632dfec12664f5b60b9cfae077d1953a55e65b16662b425e522fa79b409e9d40"
-    sha256 cellar: :any_skip_relocation, ventura:       "632dfec12664f5b60b9cfae077d1953a55e65b16662b425e522fa79b409e9d40"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8fdbb953057fc8bf3a82a94740643996c080162537ce4e0d6b541cbddd769cf0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4b59ab08f6ec529f59bb46d8ca40c2392bb1852bc41efc627fc4ace6a8ef8cc2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4b59ab08f6ec529f59bb46d8ca40c2392bb1852bc41efc627fc4ace6a8ef8cc2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4b59ab08f6ec529f59bb46d8ca40c2392bb1852bc41efc627fc4ace6a8ef8cc2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "21d98fd062aad88790caa928812f1a265d1a0cd47a5be3d24927622438864a4c"
+    sha256 cellar: :any_skip_relocation, ventura:       "21d98fd062aad88790caa928812f1a265d1a0cd47a5be3d24927622438864a4c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b48e142942bda061bfc6eb9eda53a41b3de07b6b9553ce2f36c343448783c53f"
   end
 
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.com/vektra/mockery/v2/pkg/logging.SemVer=v#{version}"
+    ldflags = "-s -w -X github.com/vektra/mockery/v#{version.major}/internal/logging.SemVer=v#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
     generate_completions_from_executable(bin/"mockery", "completion")
   end
 
   test do
-    output = shell_output("#{bin}/mockery --keeptree 2>&1", 1)
-    assert_match "Starting mockery dry-run=false version=v#{version}", output
-
-    output = shell_output("#{bin}/mockery --all --dry-run 2>&1")
-    assert_match "INF Starting mockery dry-run=true version=v#{version}", output
+    (testpath/".mockery.yaml").write <<~YAML
+      packages:
+        github.com/vektra/mockery/v2/pkg:
+          interfaces:
+            TypesPackage:
+    YAML
+    output = shell_output("#{bin}/mockery 2>&1", 1)
+    assert_match "Starting mockery", output
+    assert_match "version=v#{version}", output
   end
 end

@@ -15,6 +15,7 @@ class TrezorBridge < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "55eab81dca886c7fcb19eef1859d7166a3db6a4a24c1bcfae2b49829af8c45f2"
     sha256 cellar: :any_skip_relocation, ventura:        "5f6906f339f0c85c6d048aff26fa7a87adea4e87b8e262f54dd482e7d31231fc"
     sha256 cellar: :any_skip_relocation, monterey:       "3c19a0c1ec5d0ede24e8178c9a8e79fa7777e266ce9a941fdbdc5fc7abd4f6d7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "a1e934f0f4c538d7a228bcdf430b1f97df1c8e469e9cd685f8cfec93dd18334d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0039559d527cb2841e04cff9bb7bc59b6db17f6f74f442768af8a81776ccacd9"
   end
 

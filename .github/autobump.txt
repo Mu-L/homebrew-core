@@ -732,6 +732,7 @@ datamash
 datasette
 datatype99
 dav1d
+dblab
 dbml-cli
 dbus
 dbus-glib
@@ -825,6 +826,7 @@ docker-machine-driver-vultr
 docker-squash
 dockerfile-language-server
 dockerfilegraph
+dockerfmt
 dockerize
 dockly
 dockviz
@@ -1512,6 +1514,7 @@ httpie
 httping
 httpx
 httpyac
+hub-tool
 hubble
 huggingface-cli
 hugo
@@ -1706,6 +1709,7 @@ kapacitor
 kapp
 karmadactl
 kaskade
+katago
 katana
 kbld
 kcat
@@ -1876,6 +1880,7 @@ libcyaml
 libdap
 libdeflate
 libdex
+libdicom
 libdivide
 libdmtx
 libdnet
@@ -2275,6 +2280,7 @@ minigraph
 minijinja-cli
 minikube
 minimal-racket
+minio
 minio-warp
 minipro
 miniserve
@@ -2535,6 +2541,7 @@ ollama
 omake
 omega
 omniorb
+ompl
 onednn
 onedpl
 onedrive
@@ -2632,6 +2639,7 @@ otf2
 otree
 ots
 ott
+otterdog
 ov
 overarch
 overmind
@@ -3623,6 +3631,7 @@ ttyplot
 tuisky
 tup
 twine
+twitch-cli
 txr
 tygo
 typescript
@@ -3710,6 +3719,7 @@ vercel-cli
 verilator
 verovio
 versitygw
+veryfasttree
 vet
 vexctl
 vfkit

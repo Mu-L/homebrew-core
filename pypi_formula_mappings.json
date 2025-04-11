@@ -632,6 +632,9 @@
   "osc-cli": {
     "exclude_packages": ["certifi"]
   },
+  "otterdog": {
+    "exclude_packages": ["certifi", "cryptography"]
+  },
   "parliament": {
     "extra_packages": ["setuptools"]
   },
@@ -964,7 +967,7 @@
     "exclude_packages": ["certifi"]
   },
   "wxpython": {
-    "exclude_packages": ["numpy", "pillow", "six"]
+    "exclude_packages": ["numpy", "pillow"]
   },
   "xdot": {
     "exclude_packages": ["numpy", "pygobject"],

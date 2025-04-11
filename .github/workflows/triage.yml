@@ -247,6 +247,7 @@ jobs:
                 node|\
                 octave|\
                 opencascade|\
+                openfast|\
                 openvino|\
                 pcl|\
                 ponyc|\
@@ -271,6 +272,7 @@ jobs:
                 boost|\
                 brotli|\
                 c-ares|\
+                cabal-install|\
                 dav1d|\
                 freetype|\
                 gcc|\
